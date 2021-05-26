@@ -1,59 +1,142 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<!-- PROJECT LOGO -->
+*work in progress*
 
-Welcome USER_NAME,
+<br />
+<p align="center">
+  <a href="#">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+  <h3 align="center">Can You Remember?</h3>
 
-## Gitpod Reminders
+  <p align="center">
+    A simple interactive memory game for Code Institute's second Milestone Project.
+    <br />
+    <a href="#"><strong>Quick link to the website</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/JuliaByl">Github Pages</a>
+    ·
+    <a href="#">LinkedIn</a>
+    ·
+    <a href="#contact">Contact</a>
+  </p>
+</p>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#how-to-clone-my-repository">How to clone my repository</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li>
+        <a href="#roadmap">Roadmap</a>
+        <ul>
+            <li><a href="#bugs">Bugs</a></li>
+            <li><a href="#bigger-changes-to-the-website">Bigger changes to the website</a></li>
+            <li><a href="#testing">Testing</a></li>
+        </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Another blue button should appear to click: _Open Browser_.
+[Can You Remember? *screenshot to be added soon*]('#')
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+short description about project - *to be added*
 
-To log into the Heroku toolbelt CLI:
+### Built With
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* [Bootstrap](https://getbootstrap.com)
+* [JQuery](https://jquery.com)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### How to Clone my repository
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```JS
+   const API_KEY = 'ENTER YOUR API';
+   ```
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<!-- USAGE EXAMPLES -->
+## Usage
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+User stories - *to be added*
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<!-- ROADMAP -->
+## Roadmap
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Bugs
 
----
+[Link to github issues section](https://github.com/JuliaByl/can-you-remember/issues)
 
-Happy coding!
+### Bigger changes to the website
+*to be added*
+
+### Testing
+*to be added*
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Julia Bylund - julia.bylund.97@gmail.com
+
+Project Link: [Can You Remember?](https://github.com/JuliaByl/can-you-remember)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [README template from othneildrew](https://github.com/othneildrew/Best-README-Template)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
