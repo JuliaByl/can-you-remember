@@ -137,6 +137,11 @@ Project Link: [Can You Remember?](https://github.com/JuliaByl/can-you-remember)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
+* [Code Institute](https://codeinstitute.net/)
 * [README template from othneildrew](https://github.com/othneildrew/Best-README-Template)
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
+* [Balsamiq Wireframes](https://balsamiq.com/)
+* [Pexels](https://www.pexels.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Stack Overflow](https://stackoverflow.com/)
