@@ -57,9 +57,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Can You Remember? *screenshot to be added soon*]('#')
 
-short description about project - *to be added*
+
+This Is a simple memory game, inspirated by the current worldwide events. It will be designed in a way that is pleasing to the eye, and challenging to the mind. It also takes into consideration the importance of staying safe during covid-19, and will have a special theme dedicated to educate about protecting yourself and others. It is a multi level game with different themes, and a special level for those who want more of a challenge. 
+
+Below this text I have attached two wireframe examples of the website, one with an in-game example, and the other one is a more complete description of the components of the game. 
+To see complete wireframes, click [**HERE**](images/wireframes/complete-wireframes.png).
+<hr>
+
+<!-- HERO IMAGE / EXAMPLE WIREFRAME -->
+![example image of game](images/wireframes/wireframe-example.png)
+
+![components and interactivity examples](images/wireframes/wireframe-text.png)
+
 
 ### Built With
 
@@ -89,7 +99,15 @@ short description about project - *to be added*
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-User stories - *to be added*
+### User Stories
+
+As a user I want to...
+
+...feel motivated to stay in the game - by getting challenged and having multiple choices to pick between
+...be able to stay in the game for longer without straining my eyes - by having the possibility to choose dark mode
+...learn something - by getting a useful theme focused on learning about current events
+...navigate easily throughout the game - by having everything easily accessible and instructions to not cause confusion
+
 
 
 <!-- ROADMAP -->
