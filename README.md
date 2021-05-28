@@ -103,10 +103,10 @@ To see complete wireframes, click [**HERE**](images/wireframes/complete-wirefram
 
 As a user I want to...
 
-...feel motivated to stay in the game - by getting challenged and having multiple choices to pick between
-...be able to stay in the game for longer without straining my eyes - by having the possibility to choose dark mode
-...learn something - by getting a useful theme focused on learning about current events
-...navigate easily throughout the game - by having everything easily accessible and instructions to not cause confusion
+* ...feel motivated to stay in the game - by getting challenged and having multiple choices to pick between
+* ...be able to stay in the game for longer without straining my eyes - by having the possibility to choose dark mode
+* ...learn something - by getting a useful theme focused on learning about current events
+* ...navigate easily throughout the game - by having everything easily accessible and instructions to not cause confusion
 
 
 
