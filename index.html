@@ -19,21 +19,23 @@
 <!---------------game container--------------->
     <div class="container game-container">
         <nav class="row">
-            <!----------game menu---------->
-            <div class="col-8 main-menu">
-                <button class="btn btn-primary">Game Rules</button>
-                <button class="btn btn-primary">Customize</button>                   <!----continue working here!---->
-                <button class="btn btn-primary">Reset</button>
-            </div>
-            <!----------menu buttons---------->
-            <div class="col-2 float-left start-button">
-                <button class="btn btn-success">Start Game!</button>
-            </div>
-            <div class="col-2 custom-control custom-switch demon-mode">
-                <input type="checkbox" class="custom-control-input" id="demon-switch">
-                <label for="demon-switch" class="custom-control-label">
-                    <strong>DEMON MODE</strong>
-                </label>
+            <div class="col-sm-12 full-menu">
+                <!----------hamburger menu items---------->
+                <div class="d-inline">
+                    <button class="btn btn-outline-light">Game Rules</button>
+                    <button class="btn btn-outline-light">Customize</button>                   
+                    <button class="btn btn-outline-light">Reset</button>
+                    <button class="btn btn-danger d-inline float-right custom-control custom-switch demon-mode">
+                        <input type="checkbox" class="custom-control-input" id="demon-switch">
+                        <label for="demon-switch" class="custom-control-label">
+                            <strong>DEMON MODE</strong>
+                        </label>
+                    </button>    
+                </div>
+                <!----------start button---------->
+                <div class="d-inline start-button">
+                    <button class="btn btn-success btn-lg">Start Game</button>
+                </div>
             </div>
         </nav>
     </div>

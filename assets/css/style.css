@@ -1,11 +1,39 @@
 /*colors*/
 .game-container {
-    background-color: blueviolet;
+    background-color: #4ED0CE;
+}
+
+.full-menu {
+    background-color: #54B9CA;
+}
+
+.demon-mode {
+    background-color: #C30F0F;
+}
+
+.btn-outline-light {
+    text-shadow: 2px 1px #4ED0CE
+}
+
+.btn-outline-light:hover {
+    color: #54B9CA;
+    text-shadow: none;
 }
 
 /*game container*/
+.full-menu {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
 .game-container {
-    width: 60vw;
+    width: 70vw;
     height: 80vh;
     margin-top: 5vh;
+}
+
+.demon-mode {
+    font-size: x-small;
+    width: 85px;
+    height: 50px;
 }
