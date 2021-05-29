@@ -23,9 +23,25 @@
                 <!----------hamburger menu items---------->
                 <div class="d-inline">
                     <button class="btn btn-outline-light">Game Rules</button>
-                    <button class="btn btn-outline-light">Customize</button>                   
+                    <div class="dropdown d-inline">
+                        <button id="customize-dropdown" class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Customize
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="customize-dropdown">
+                            <li class="dropdown-item" type="button">Dark Mode</li>
+                            <li>
+                                <h6 class="dropdown-header">Themes</h6>
+                                <ul> 
+                                    <li type="button" class="dropdown-item">Cats</li>
+                                    <li type="button" class="dropdown-item">Plants</li>
+                                    <li type="button" class="dropdown-item">Covid-19 ethics</li>
+                                    <li type="button" class="dropdown-item">Mix all themes</li>
+                                </ul>     
+                            </li>
+                        </ul>
+                    </div>                   
                     <button class="btn btn-outline-light">Reset</button>
-                    <button class="btn btn-danger d-inline float-right custom-control custom-switch demon-mode">
+                    <button class="btn btn-danger d-inline float-right custom-control custom-switch demon-mode" type="button">
                         <input type="checkbox" class="custom-control-input" id="demon-switch">
                         <label for="demon-switch" class="custom-control-label">
                             <strong>DEMON MODE</strong>
@@ -34,7 +50,7 @@
                 </div>
                 <!----------start button---------->
                 <div class="d-inline start-button">
-                    <button class="btn btn-success btn-lg">Start Game</button>
+                    <button class="btn btn-success btn-lg" type="button">Start Game</button>
                 </div>
             </div>
         </nav>
