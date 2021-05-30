@@ -20,42 +20,14 @@
     <div class="container game-container">
         <nav class="row">
             <div class="col-sm-12 full-menu">
-                    <div id="big-menu">
-                        <button class="btn btn-outline-light">Game Rules</button>
-                        <div class="dropdown d-inline">
-                            <button id="customize-dropdown" class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Customize
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="customize-dropdown">
-                                <li class="dropdown-item" type="button">Dark Mode</li>
-                                <li>
-                                    <h6 class="dropdown-header">Themes</h6>
-                                    <ul> 
-                                        <li type="button" class="dropdown-item"><i class="fas fa-cat"></i> Cats</li>
-                                        <li type="button" class="dropdown-item"><i class="fas fa-seedling"></i> Plants</li>
-                                        <li type="button" class="dropdown-item"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
-                                        <li type="button" class="dropdown-item"><i class="fas fa-shapes"></i> Mix all themes</li>
-                                    </ul>     
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-outline-light">Reset</button>
-                        <button class="btn btn-danger d-inline float-right custom-control custom-switch demon-mode" type="button">
-                            <input type="checkbox" class="custom-control-input" id="demon-switch">
-                            <label for="demon-switch" class="custom-control-label">
-                                <strong>DEMON MODE</strong>
-                            </label>
-                        </button>   
-                    </div>    
-                    <!--hamburger menu-->
-                    <div class="dropdown">
-                        <button id="hamburger-dropdown" class="btn float-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-h fa-2x"></i>
+                <div id="big-menu">
+                    <button class="btn btn-outline-light">Game Rules</button>
+                    <div class="dropdown d-inline">
+                        <button id="customize-dropdown" class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Customize
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="hamburger-dropdown">
-                            <li class="dropdown-item" type="button">Game Rules</li>
+                        <ul class="dropdown-menu" aria-labelledby="customize-dropdown">
                             <li class="dropdown-item" type="button">Dark Mode</li>
-                            <li class="dropdown-item">Reset</li>
                             <li>
                                 <h6 class="dropdown-header">Themes</h6>
                                 <ul> 
@@ -65,16 +37,43 @@
                                     <li type="button" class="dropdown-item"><i class="fas fa-shapes"></i> Mix all themes</li>
                                 </ul>     
                             </li>
-                            <li class="btn btn-danger custom-control custom-switch" type="button">
-                                <input type="checkbox" class="custom-control-input" id="demon-switch-sm">
-                                <label for="demon-switch-sm" class="custom-control-label">DEMON MODE</label>
-                            </li>   
                         </ul>
-                    </div>               
-                <!----------start button---------->
-                <div class="d-inline start-button">
-                    <button class="btn btn-success btn-lg" type="button">Start Game</button>
-                </div>
+                    </div>
+                    <button class="btn btn-outline-light">Reset</button>
+                    <button class="btn btn-danger d-inline float-right custom-control custom-switch demon-mode" type="button">
+                        <input type="checkbox" class="custom-control-input" id="demon-switch">
+                        <label for="demon-switch" class="custom-control-label">
+                            <strong>DEMON MODE</strong>
+                        </label>
+                    </button>
+                    <div class="d-inline start-button">
+                        <button class="btn btn-success btn-lg" type="button">Start Game</button>
+                    </div>   
+                </div>    
+                <!--hamburger menu-->
+                <div class="dropdown hamburger-menu">
+                    <button id="hamburger-dropdown" class="btn float-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-h fa-2x"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="hamburger-dropdown">
+                        <li class="dropdown-item" type="button">Game Rules</li>
+                        <li class="dropdown-item" type="button">Dark Mode</li>
+                        <li class="dropdown-item">Reset</li>
+                        <li>
+                            <h6 class="dropdown-header">Themes</h6>
+                            <ul> 
+                                <li type="button" class="dropdown-item"><i class="fas fa-cat"></i> Cats</li>
+                                <li type="button" class="dropdown-item"><i class="fas fa-seedling"></i> Plants</li>
+                                <li type="button" class="dropdown-item"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
+                                <li type="button" class="dropdown-item"><i class="fas fa-shapes"></i> Mix all themes</li>
+                            </ul>     
+                        </li>
+                        <li class="btn btn-danger custom-control custom-switch" type="button">
+                            <input type="checkbox" class="custom-control-input" id="demon-switch-sm">
+                            <label for="demon-switch-sm" class="custom-control-label">DEMON MODE</label>
+                        </li>   
+                    </ul>
+                </div>               
             </div>
         </nav>
     </div>
@@ -86,5 +85,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/780fb9bfea.js" crossorigin="anonymous"></script>
+<script src="assets/scripts/script.js"></script>
 </body>
 </html>
