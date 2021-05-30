@@ -7,29 +7,42 @@
     background-color: #54B9CA;
 }
 
+.dropdown-menu, .dropdown-item {
+    background-color: #54B9CA;
+    color: #fff;
+}
+
 .demon-mode {
     background-color: #C30F0F;
 }
 
-.btn-outline-light {
-    text-shadow: 2px 1px #4ED0CE
+.btn-outline-light:hover, .dropdown-item:hover, .dropdown-item:active {
+    color: #54B9CA;
 }
 
-.btn-outline-light:hover {
-    color: #54B9CA;
-    text-shadow: none;
+/*body*/
+h1 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 /*game container*/
 .game-container {
     width: 70vw;
     height: 80vh;
-    margin-top: 5vh;
 }
 
 .full-menu {
     padding-top: 1vh;
     padding-bottom: 1vh;
+}
+
+.dropdown-menu {
+    margin-top: 1.5vh;
+}
+
+li > .fas {
+    margin-right: 5px;
 }
 
 .demon-mode {
