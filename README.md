@@ -12,7 +12,7 @@
   <p align="center">
     A simple interactive memory game for Code Institute's second Milestone Project.
     <br />
-    <a href="#"><strong>Quick link to the website</strong></a>
+    <a href="https://juliabyl.github.io/can-you-remember/"><strong>Quick link to the website</strong></a>
     <br />
     <br />
     <a href="https://github.com/JuliaByl">Github Pages</a>
