@@ -183,6 +183,8 @@ Project Link: [Can You Remember?](https://github.com/JuliaByl/can-you-remember)
 * plants-14 [Photo by Pok Rie from Pexels](https://www.pexels.com/photo/selective-focus-photography-of-pink-and-white-straw-daisy-flower-130574/)
 * plants-15 [Photo by Chad Spacey from Pexels](https://www.pexels.com/photo/close-up-photography-of-sunflower-1021947/)
 
+<br>
+
 * cats-1 [Photo by Vansh Sharma from Pexels](https://www.pexels.com/photo/brown-tiger-lying-on-green-grass-7230493/)
 * cats-1 [Photo by Renato Rocca from Pexels](https://www.pexels.com/photo/animal-pet-cute-grey-6729951/)
 * cats-3 [Photo by Karen Laårk Boshoff from Pexels](https://www.pexels.com/photo/animal-pet-cute-fur-6441474/)
@@ -198,3 +200,21 @@ Project Link: [Can You Remember?](https://github.com/JuliaByl/can-you-remember)
 * cats-13 [Photo by Ellie Burgin from Pexels](https://www.pexels.com/photo/cute-cat-on-grassy-ground-4612722/)
 * cats-14 [Photo by KUNAL BUDHBHATTI from Pexels](https://www.pexels.com/photo/big-zoo-tiger-cat-6269812/)
 * cats-15 [Photo by luca Finardi from Pexels](https://www.pexels.com/photo/animal-pet-cute-fur-7319488/)
+
+<br>
+
+* covid-1 [Photo by Bruno Cervera from Pexels](https://www.pexels.com/photo/black-and-brown-desk-globe-3994840/)
+* covid-2 [Photo by Charlotte May from Pexels](https://www.pexels.com/photo/crop-faceless-diverse-women-wiping-hands-with-sanitizer-in-park-5965833/)
+* covid-3 [Photo by Matilda Wormwood from Pexels](https://www.pexels.com/photo/person-holding-black-remote-control-4098580/)
+* covid-4 [Photo by Stephanie Ho from Pexels](https://www.pexels.com/photo/person-holding-paint-roller-while-painting-the-wall-994164/)
+* covid-5 [Photo by Norma Mortenson from Pexels](https://www.pexels.com/photo/person-paying-for-food-delivery-with-a-credit-card-4393532/)
+* covid-6 [Photo by Rosivan Morais from Pexels](https://www.pexels.com/photo/city-road-man-couple-5965907/)
+* covid-7 [Photo by Polina Tankilevitch from Pexels](https://www.pexels.com/photo/person-holding-thermometer-3873188/)
+* covid-8 [Photo by Gustavo Fring from Pexels](https://www.pexels.com/photo/photo-of-man-and-woman-doing-elbow-bump-4148838/)
+* covid-9 [Photo by cottonbro from Pexels](https://www.pexels.com/photo/man-in-white-crew-neck-t-shirt-holding-stay-at-home-sign-3952233/)
+* covid-10 [Photo by Katerina Holmes from Pexels](https://www.pexels.com/photo/ethnic-girl-having-video-chat-with-teacher-online-on-laptop-5905709/)
+* covid-11 [Photo by Matilda Wormwood from Pexels](https://www.pexels.com/photo/close-up-photo-of-person-cleaning-the-table-4099467/)
+* covid-12 [Photo by Artem Podrez from Pexels](https://www.pexels.com/photo/a-close-up-view-of-a-covid-19-vaccine-vial-on-blue-background-5878503/)
+* covid-13 [Photo by Tim Mossholder from Pexels](https://www.pexels.com/photo/yellow-and-black-caution-wet-floor-sign-4515086/)
+* covid-14 [Photo by Polina Tankilevitch from Pexels](https://www.pexels.com/photo/woman-wearing-face-mask-3873196/)
+* covid-15 [Photo by Burst from Pexels](https://www.pexels.com/photo/person-washing-his-hand-545014/)
