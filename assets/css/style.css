@@ -63,8 +63,11 @@ li > .fas {
     padding-top: 1vh;
 }
 
-/*footer*/
+.current-level > p {
+    margin-bottom: 0;
+}
 
+/*footer*/
 footer {
     padding-top: 15px;
 }
