@@ -56,6 +56,8 @@ li > .fas {
     height: fit-content;
     min-height: 80vh;
     margin-top: 15px;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .bottom-area {
