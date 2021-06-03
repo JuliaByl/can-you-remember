@@ -25,7 +25,7 @@ h1 {
     color: #fff;
 }
 
-.btn-outline-light:hover, .dropdown-item:hover, .show > .btn-outline-light.dropdown-toggle, .btn-outline-light:hover {
+.btn-outline-light:hover, .dropdown-item:hover, .show>.btn-outline-light.dropdown-toggle, .btn-outline-light:hover {
     color: #54B9CA;
     background-color: #fff;
 }
@@ -35,7 +35,7 @@ h1 {
     color: #005B62;
 }
 
-.bottom-area, h6, h1{
+.bottom-area, .dropdown-header, h1{
     color: #005B62;
 }
 
@@ -70,10 +70,21 @@ li > .fas {
     width: 85px;
     height: 50px;
 }
+
+/*interactive styling for demon mode- and dark mode-button, incl. colors.
+Please note - I mainly looked up in dev tools how bootstrap 
+(find link under Acknowledgements in README.md) applied their colors and did the same.
+*/
+.btn-danger > .custom-control-label::after, 
+.dropdown-item > .custom-control-label::after,
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: #54B9CA;
+}                                                   
+
 /*game area*/
 .game-area {
     height: fit-content;
-    min-height: 80vh;
+    min-height: 70vh;
     margin-top: 15px;
     margin-left: 1px;
     margin-right: 1px;
