@@ -85,12 +85,17 @@
         </div>
         <!--timer, best time, current level-->
         <div class="bottom-area row text-center align-items-center">
-            <!--timer-->
+            <!--timer
+            how to: "start game"-button will start timer, when the last match in game area is reached, timer stops.
+            -->
             <div class="col-md-12 col-sm-6 timer">
                 <i class="fas fa-stopwatch fa-2x"></i>
                 <span id="timer">INSERT TIMER</span>
             </div>
-            <!--best time-->
+            <!--best time
+            how to: will initially be set to 00:00:00. When timer stops, if "timer" is 00:00:00
+            or higher than the number under "best time", remove previous number and add new. Use if/else.
+            -->
             <div class="col-md-6 col-sm-12 best-time">
                 <p>
                     Best Time: <span id="tracker">INSERT TRACKER</span>
