@@ -25,12 +25,18 @@ h1 {
     color: #fff;
 }
 
-.btn-outline-light:hover, .dropdown-item:hover, .dropdown-item:active {
+.btn-outline-light:hover, .dropdown-item:hover, .show > .btn-outline-light.dropdown-toggle, .btn-outline-light:hover {
     color: #54B9CA;
+    background-color: #fff;
 }
 
 .game-area {
     background-color: rgba(255, 255, 255, 0.2);
+    color: #005B62;
+}
+
+.bottom-area, h6, h1{
+    color: #005B62;
 }
 
 /*body*/
