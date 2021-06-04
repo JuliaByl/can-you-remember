@@ -90,6 +90,15 @@ Please note - I mainly looked up in dev tools how bootstrap
     margin-right: 1px;
 }
 
+/*sizing memory bricks*/
+.test {
+    height: 15vh;
+    background-color: #4ED0CE;
+    border: solid rgba(255, 255, 255, 0.2);
+    border-width: 3px;
+}
+
+
 .bottom-area {
     padding-bottom: 1vh;
     padding-top: 1vh;
@@ -112,15 +121,4 @@ footer {
         max-height: 100%; 
         margin: 0;
     }
-}
-
-
-
-
-/*TEST-for sizing memory bricks*/
-.test {
-    height: 15vh;
-    background-color: #4ED0CE;
-    border: solid rgba(255, 255, 255, 0.2);
-    border-width: 3px;
 }
