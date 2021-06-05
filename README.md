@@ -100,7 +100,7 @@ As a user I want to...
 [Link to github issues section](https://github.com/JuliaByl/can-you-remember/issues)
 
 ### Bigger changes to the website
-*to be added*
+* I decided to remove the "mix all themes" - theme as it doesn't seem essential for what I'm trying to do. I want to be able to focus more on all the other aspects of the game.
 
 ### Testing
 *to be added*
