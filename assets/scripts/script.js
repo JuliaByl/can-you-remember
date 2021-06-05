@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 if ($(window).width() <= 772) {
     $('.hamburger-menu').append($('.start-button'));
     $('#big-menu').remove();
@@ -6,34 +8,46 @@ if ($(window).width() <= 772) {
 }
 
 /*before game starts*/
-function pickTheme {}
+$(".themes").click (function() {
+    if ($(this).html() == $(".cat").html()) {
+        catsTheme();
+    } else if ($(this).html() == $(".plants").html()) {
+        plantsTheme();
+    } else if ($(this).html() == $(".covid").html()) {
+        covidTheme();
+    } else if ($(this).html() == $(".mix").html()) {
+        console.log("mix");
+    }
+});     
 
-function catsTheme {}
+function catsTheme() {
+    /*if ex. lvl 1, go through cats folder until specific amount, if lvl 2, other amount etc.*/
+}
 
-function plantsTheme {}
+function plantsTheme() {}
 
-function covidTheme {}
+function covidTheme() {}
 
-function startGame {}
+function startGame() {}
 
-function restartGame {}
+function restartGame() {}
 
 /*during game per level*/
 
-function flipCard {}
+function flipCard() {}
 
-function hideCard {}
+function hideCard() {}
 
-function matchCard {}
+function matchCard() {}
 
-function levelClear {}
+function levelClear() {}
 
-function stopTimer {}
+function stopTimer() {}
 
 /*after a level is cleared*/
 
-function nextLevel {}
+function nextLevel() {}
 
 /*after all levels are cleared*/
 
-
+});
