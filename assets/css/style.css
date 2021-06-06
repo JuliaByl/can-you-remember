@@ -91,13 +91,16 @@ Please note - I mainly looked up in dev tools how bootstrap
 }
 
 /*sizing memory bricks*/
-.test {
+.card-div {
     height: 15vh;
     background-color: #4ED0CE;
     border: solid rgba(255, 255, 255, 0.2);
     border-width: 3px;
 }
 
+.card-img {
+    overflow: hidden;
+}
 
 .bottom-area {
     padding-bottom: 1vh;

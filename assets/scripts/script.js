@@ -7,7 +7,7 @@ if ($(window).width() <= 772) {
     $('.hamburger-menu')[0].remove(); 
 }
 
-/*before game starts*/
+/*themes*/
 $(".themes").click (function() {
     if ($(this).html() == $(".cat").html()) {
         catsTheme();
@@ -15,13 +15,36 @@ $(".themes").click (function() {
         plantsTheme();
     } else if ($(this).html() == $(".covid").html()) {
         covidTheme();
-    } else if ($(this).html() == $(".mix").html()) {
-        console.log("mix");
     }
 });     
 
 function catsTheme() {
-    /*if ex. lvl 1, go through cats folder until specific amount, if lvl 2, other amount etc.*/
+    let gameArea = $(".game-area");
+    gameArea.empty();
+    let imgCounter = [];
+    let imgRandom;
+
+    /*depending on level, change how many 2's are inside imgCounter,*/
+    for (let j=1; j <= 5; j++) {
+        imgCounter.push(2);
+    }
+    
+    /*Level 1: generate 2 pairs of 5 different images*/
+    for (let i=1; i < 11; i++) {
+        imgRandom = Math.floor(Math.random() * 5) + 1;
+        if(imgCounter[imgRandom-1] >= 1) {
+            gameArea.append( 
+                `<div class="card-div">
+                <img class ="card-img" src="../../images/cats/cats-${imgRandom}.jpg"> 
+                </div>`
+            );
+            /*limit the amount of the same image to 2*/
+            imgCounter[imgRandom-1]-=1; 
+        } else {
+            i--;
+
+        }
+    }                          
 }
 
 function plantsTheme() {}
