@@ -106,7 +106,7 @@ As a user I want to...
 
 #### Memory pictures loading correctly check
 
-[![Image from Gyazo](https://i.gyazo.com/f42ee6422e28d5bedca269a813e951f9.gif)](https://gyazo.com/f42ee6422e28d5bedca269a813e951f9)
+![Image from Gyazo](https://i.gyazo.com/f42ee6422e28d5bedca269a813e951f9.gif)
 
 
 <!-- CONTRIBUTING -->
