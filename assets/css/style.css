@@ -35,6 +35,11 @@ h1 {
     color: #005B62;
 }
 
+.card-div {
+    background-color: #005B62;
+    border: solid #4ED0CE;
+}
+
 .bottom-area, .dropdown-header, h1{
     color: #005B62;
 }
@@ -83,8 +88,8 @@ Please note - I mainly looked up in dev tools how bootstrap
 
 /*game area*/
 .game-area {
+    min-height: 55vh;
     height: fit-content;
-    min-height: 70vh;
     margin-top: 15px;
     margin-left: 1px;
     margin-right: 1px;
@@ -92,9 +97,7 @@ Please note - I mainly looked up in dev tools how bootstrap
 
 /*sizing memory bricks*/
 .card-div {
-    height: 15vh;
-    background-color: #4ED0CE;
-    border: solid rgba(255, 255, 255, 0.2);
+    height: 29vh;
     border-width: 3px;
 }
 
@@ -123,5 +126,13 @@ footer {
         min-height: 100vh;
         max-height: 100%; 
         margin: 0;
+    }
+
+    .game-area {
+        background-color: #4ED0CE;
+    }
+
+    .card-div {
+        max-height: 12.5vh;
     }
 }
