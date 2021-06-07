@@ -67,7 +67,7 @@ function plantsTheme() {
                 <img class ="card-img" src="../../images/plants/plants-${imgRandom}.jpg"> 
                 </div>`
             );
-            
+            $("img").hide();
             /*limit the amount of the same image to 2*/
             imgCounter[imgRandom-1]-=1; 
         } else {
@@ -96,7 +96,7 @@ function covidTheme() {
                 <img class ="card-img" src="../../images/covid/covid-${imgRandom}.jpg"> 
                 </div>`
             );
-            
+            $("img").hide();
             /*limit the amount of the same image to 2*/
             imgCounter[imgRandom-1]-=1; 
         } else {
