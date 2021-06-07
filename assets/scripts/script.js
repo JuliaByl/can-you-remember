@@ -7,8 +7,13 @@ if ($(window).width() <= 772) {
     $('.hamburger-menu')[0].remove(); 
 }
 
+/*start game-button*/
+let startButton = $(".start-button");
+
 /*themes*/
 $(".themes").click (function() {
+    startButton.children().text("Start Game");
+
     if ($(this).html() == $(".cat").html()) {
         catsTheme();
     } else if ($(this).html() == $(".plants").html()) {
@@ -38,7 +43,7 @@ function catsTheme() {
                 <img class ="card-img" src="../../images/cats/cats-${imgRandom}.jpg"> 
                 </div>`
             );
-            
+            $("img").hide();
             /*limit the amount of the same image to 2*/
             imgCounter[imgRandom-1]-=1; 
         } else {
@@ -67,7 +72,7 @@ function plantsTheme() {
                 <img class ="card-img" src="../../images/plants/plants-${imgRandom}.jpg"> 
                 </div>`
             );
-            
+            $("img").hide();
             /*limit the amount of the same image to 2*/
             imgCounter[imgRandom-1]-=1; 
         } else {
@@ -96,7 +101,7 @@ function covidTheme() {
                 <img class ="card-img" src="../../images/covid/covid-${imgRandom}.jpg"> 
                 </div>`
             );
-            
+            $("img").hide();
             /*limit the amount of the same image to 2*/
             imgCounter[imgRandom-1]-=1; 
         } else {
@@ -106,7 +111,10 @@ function covidTheme() {
 }
 
 /*start game functions*/
-function startGame() {}
+startButton.click(function startGame() {
+    startTimer;
+    startButton.children().text("Restart Game");
+})
 
 function restartGame() {}
 
