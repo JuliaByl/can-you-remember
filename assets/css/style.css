@@ -99,9 +99,6 @@ Please note - I mainly looked up in dev tools how bootstrap
 .card-div {
     height: 29vh;
     border-width: 3px;
-}
-
-.card-img {
     overflow: hidden;
 }
 
