@@ -1,28 +1,16 @@
 $(document).ready(function() {
 
 if ($(window).width() <= 772) {
-    $('.hamburger-menu').append($('.start-button'));
+    $('.hamburger-menu').append($('.game-button'));
     $('#big-menu').remove();
 } else {
     $('.hamburger-menu')[0].remove(); 
 }
 
 /*start game-button*/
-let startButton = $(".start-button");
+let gameButton = $(".game-button");
 
-/*themes*/
-$(".themes").click (function() {
-    startButton.children().text("Start Game");
-
-    if ($(this).html() == $(".cat").html()) {
-        catsTheme();
-    } else if ($(this).html() == $(".plants").html()) {
-        plantsTheme();
-    } else if ($(this).html() == $(".covid").html()) {
-        covidTheme();
-    }
-});     
-
+/*themes*/    
 function catsTheme() {
     let gameArea = $(".game-area");
     gameArea.empty();
@@ -110,13 +98,35 @@ function covidTheme() {
     }  
 }
 
-/*start game functions*/
-startButton.click(function startGame() {
-    startTimer;
-    startButton.children().text("Restart Game");
-})
+$(".themes").click (function() {
+    gameButton.attr("id", "start-button").children().text("Start Game");
 
-function restartGame() {}
+    if ($(this).html() == $(".cat").html()) {
+        catsTheme();
+    } else if ($(this).html() == $(".plants").html()) {
+        plantsTheme();
+    } else if ($(this).html() == $(".covid").html()) {
+        covidTheme();
+    }
+}); 
+
+/*start game functions*/
+function startGame() {
+    gameButton.attr("id", "restart-button").children().text("Restart Game");
+    startTimer();
+}
+
+function restartGame() {
+    startTimer();
+}
+
+gameButton.click(function() {
+    if(gameButton.attr("id") === "start-game") {
+        startGame();
+    } else {
+        restartGame();
+    }
+})
 
 /*during game per level*/
 function flipCard() {}
