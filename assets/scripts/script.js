@@ -108,6 +108,15 @@ $(".themes").click (function() {
     } else if ($(this).html() == $(".covid").html()) {
         covidTheme();
     }
+    /*enable game-button only if a theme is chosen*/
+    gameButton.click(function() {
+        if(gameButton.attr("id") === "start-button") {
+            startGame();
+            cardClick();
+        } else {
+            restartGame();
+        }
+    })
 }); 
 
 /*start game functions*/
@@ -118,20 +127,23 @@ function startGame() {
 
 function restartGame() {
     startTimer();
+
 }
 
-gameButton.click(function() {
-    if(gameButton.attr("id") === "start-game") {
-        startGame();
-    } else {
-        restartGame();
-    }
-})
-
 /*during game per level*/
-function flipCard() {}
+function cardClick() {
+    $(".card-div").click(function() {
+        if($(this).children().attr("style") === "display: none;") {
+             $(this).children().show();
+        } else {
+            /*TODO*/
+        }
+    })
+}
 
-function hideCard() {}
+function showCard() {}
+
+function hideCards() {}
 
 function matchCard() {}
 
