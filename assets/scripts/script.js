@@ -161,9 +161,19 @@ function checkCards() {
     }
 }
 
-function hideCards() {}
+function hideCards() {
+    /*TODO*/
+    /*try setTimeot next time*/
+    $("#img-1").children("img").delay("slow").hide();
+    $("#img-2").children("img").delay("slow").hide();
+    $("#img-1").attr("id", "");
+    $("#img-2").attr("id", "");
+}
 
-function matchCard() {}
+function matchCard() {
+    $("#img-1").attr("id", "");
+    $("#img-2").attr("id", "");
+}
 
 function levelClear() {}
 
