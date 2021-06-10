@@ -136,7 +136,7 @@ function cardClick() {
         let cardImg = $(this).children();
 
         if(cardImg.attr("style") === "display: none;") {
-           if($(this).siblings().attr("id") === "img-1") {
+           if($("#img-1").length) {
                 cardImg.show();  
                 $(this).attr("id", "img-2");
                 checkCards();
@@ -149,7 +149,16 @@ function cardClick() {
 }
 
 function checkCards() {
-    console.log("works");
+    let img1 = $("#img-1").children().attr("src");
+    let img2 = $("#img-2").children().attr("src");
+    
+    if(img1 === img2) {
+        /*cards match*/
+        matchCard();
+    } else {
+        /*cards don't match*/
+        hideCards();
+    }
 }
 
 function hideCards() {}
