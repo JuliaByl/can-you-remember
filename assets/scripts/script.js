@@ -133,15 +133,24 @@ function restartGame() {
 /*during game per level*/
 function cardClick() {
     $(".card-div").click(function() {
-        if($(this).children().attr("style") === "display: none;") {
-             $(this).children().show();
-        } else {
-            /*TODO*/
+        let cardImg = $(this).children();
+
+        if(cardImg.attr("style") === "display: none;") {
+           if($(this).siblings().attr("id") === "img-1") {
+                cardImg.show();  
+                $(this).attr("id", "img-2");
+                checkCards();
+             } else {
+                cardImg.show(); 
+                $(this).attr("id", "img-1");
+             }
         }
     })
 }
 
-function showCard() {}
+function checkCards() {
+    console.log("works");
+}
 
 function hideCards() {}
 
