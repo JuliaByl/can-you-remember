@@ -98,7 +98,7 @@ function covidTheme() {
     }  
 }
 
-$(".themes").click (function() {
+$(".themes").click(function() {
     gameButton.attr("id", "start-button").children().text("Start Game");
 
     if ($(this).html() == $(".cat").html()) {
@@ -131,6 +131,33 @@ function restartGame() {
 }
 
 /*during game per level*/
+function matchCard() {
+    $("#img-1").attr("id", "");
+    $("#img-2").attr("id", "");
+    /*give class for matched cards*/
+    /*TODO*/
+}
+
+function hideCards() {
+    $("#img-1").children("img").hide();
+    $("#img-2").children("img").hide();
+    $("#img-1").attr("id", "");
+    $("#img-2").attr("id", ""); 
+}
+
+function checkCards() {
+    let img1 = $("#img-1").children().attr("src");
+    let img2 = $("#img-2").children().attr("src");
+    
+    if(img1 === img2) {
+        /*cards match*/
+        matchCard();
+    } else {
+        /*cards don't match*/
+        setTimeout(function() {
+            hideCards() },1000);
+    }
+}
 function cardClick() {
     $(".card-div").click(function() {
         let cardImg = $(this).children();
@@ -146,33 +173,6 @@ function cardClick() {
              }
         }
     })
-}
-
-function checkCards() {
-    let img1 = $("#img-1").children().attr("src");
-    let img2 = $("#img-2").children().attr("src");
-    
-    if(img1 === img2) {
-        /*cards match*/
-        matchCard();
-    } else {
-        /*cards don't match*/
-        hideCards();
-    }
-}
-
-function hideCards() {
-    /*TODO*/
-    /*try setTimeot next time*/
-    $("#img-1").children("img").delay("slow").hide();
-    $("#img-2").children("img").delay("slow").hide();
-    $("#img-1").attr("id", "");
-    $("#img-2").attr("id", "");
-}
-
-function matchCard() {
-    $("#img-1").attr("id", "");
-    $("#img-2").attr("id", "");
 }
 
 function levelClear() {}
