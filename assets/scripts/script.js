@@ -28,7 +28,7 @@ function catsTheme() {
         if(imgCounter[imgRandom-1] >= 1) {
             gameArea.append( 
                 `<div class="card-div">
-                <img class ="card-img" src="images/cats/cats-${imgRandom}.jpg"> 
+                <img class ="card-img cat" src="images/cats/cats-${imgRandom}.jpg"> 
                 </div>`
             );
             $("img").hide();
@@ -57,7 +57,7 @@ function plantsTheme() {
         if(imgCounter[imgRandom-1] >= 1) {
             gameArea.append( 
                 `<div class="card-div ">
-                <img class ="card-img" src="images/plants/plants-${imgRandom}.jpg"> 
+                <img class ="card-img plants" src="images/plants/plants-${imgRandom}.jpg"> 
                 </div>`
             );
             $("img").hide();
@@ -86,7 +86,7 @@ function covidTheme() {
         if(imgCounter[imgRandom-1] >= 1) {
             gameArea.append( 
                 `<div class="card-div">
-                <img class ="card-img" src="images/covid/covid-${imgRandom}.jpg"> 
+                <img class ="card-img covid" src="images/covid/covid-${imgRandom}.jpg"> 
                 </div>`
             );
             $("img").hide();
@@ -115,6 +115,7 @@ $(".themes").click(function() {
             cardClick();
         } else {
             restartGame();
+            cardClick();
         }
     })
 }); 
@@ -126,8 +127,17 @@ function startGame() {
 }
 
 function restartGame() {
-    startTimer();
+    let imgClass = $(".card-img").attr("class");
 
+    if (imgClass === "card-img cat") {
+        catsTheme();
+    } else if (imgClass === "card-img plants") {
+        plantsTheme();
+    } else {
+        covidTheme();
+    }
+
+    startTimer();
 }
 
 /*during game per level*/
