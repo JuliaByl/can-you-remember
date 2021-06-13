@@ -11,6 +11,10 @@ h1 {
     font-weight: 500;
 }
 
+.bottom-area span {
+    font-size: x-large;
+}
+
 /*colors*/
 .game-container {
     background-color: #4ED0CE;

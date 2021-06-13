@@ -7,18 +7,20 @@ if ($(window).width() <= 772) {
     $('.hamburger-menu')[0].remove(); 
 }
 
-/*start game-button*/
+/*variables*/
 let gameButton = $(".game-button");
+let gameArea = $(".game-area");
+let imgCounter = [];
+let pairs = [5,8,10,15];
+let currentLevel = 1;   /*TODO*/
+let maxLevel = 1;
 
 /*themes*/    
 function catsTheme() {
-    let gameArea = $(".game-area");
     gameArea.empty();
-    let imgCounter = [];
-    let imgRandom;
 
     /*depending on level, change how many 2's are inside imgCounter,*/
-    for (let j=1; j <= 5; j++) {
+    for (let j=1; j <= pairs; j++) {
         imgCounter.push(2);
     }
     
@@ -41,13 +43,10 @@ function catsTheme() {
 }
 
 function plantsTheme() {
-    let gameArea = $(".game-area");
     gameArea.empty();
-    let imgCounter = [];
-    let imgRandom;
 
     /*depending on level, change how many 2's are inside imgCounter,*/
-    for (let j=1; j <= 5; j++) {
+    for (let j=1; j <= pairs; j++) {
         imgCounter.push(2);
     }
     
@@ -70,13 +69,10 @@ function plantsTheme() {
 }
 
 function covidTheme() {
-    let gameArea = $(".game-area");
     gameArea.empty();
-    let imgCounter = [];
-    let imgRandom;
 
     /*depending on level, change how many 2's are inside imgCounter,*/
-    for (let j=1; j <= 5; j++) {
+    for (let j=1; j <= pairs; j++) {
         imgCounter.push(2);
     }
     
@@ -121,6 +117,10 @@ $(".themes").click(function() {
 }); 
 
 /*start game functions*/
+function startTimer() {
+
+}
+
 function startGame() {
     gameButton.attr("id", "restart-button").children().text("Restart Game");
     startTimer();
@@ -128,7 +128,7 @@ function startGame() {
 
 function restartGame() {
     let imgClass = $(".card-img").attr("class");
-
+    /*reshuffle and hide the cards*/
     if (imgClass === "card-img cat") {
         catsTheme();
     } else if (imgClass === "card-img plants") {
@@ -144,8 +144,6 @@ function restartGame() {
 function matchCard() {
     $("#img-1").attr("id", "");
     $("#img-2").attr("id", "");
-    /*give class for matched cards*/
-    /*TODO*/
 }
 
 function hideCards() {
@@ -168,6 +166,7 @@ function checkCards() {
             hideCards() },1000);
     }
 }
+
 function cardClick() {
     $(".card-div").click(function() {
         let cardImg = $(this).children();
@@ -186,8 +185,6 @@ function cardClick() {
 }
 
 function levelClear() {}
-
-function startTimer() {}
 
 function stopTimer() {}
 
