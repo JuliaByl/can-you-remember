@@ -10,53 +10,26 @@ if ($(window).width() <= 772) {
 /*variables*/
 let gameButton = $(".game-button");
 let gameArea = $(".game-area");
-let imgCounter = [];
 let pairs = [5,8,10,15];
 let currentLevel = 1;   /*TODO*/
 let maxLevel = 1;
 
 /*themes*/    
-function catsTheme() {
+function generateTheme(theme) {
+    let imgCounter = [];
     gameArea.empty();
-
     /*depending on level, change how many 2's are inside imgCounter,*/
-    for (let j=1; j <= pairs; j++) {
+    for (let j=1; j <= pairs[currentLevel-1]; j++) {
         imgCounter.push(2);
     }
     
     /*Level 1: generate 2 pairs of 5 different images*/
-    for (let i=1; i < 11; i++) {
-        imgRandom = Math.floor(Math.random() * 5) + 1;
-        if(imgCounter[imgRandom-1] >= 1) {
-            gameArea.append( 
-                `<div class="card-div">
-                <img class ="card-img cat" src="images/cats/cats-${imgRandom}.jpg"> 
-                </div>`
-            );
-            $("img").hide();
-            /*limit the amount of the same image to 2*/
-            imgCounter[imgRandom-1]-=1; 
-        } else {
-            i--;
-        }
-    }                          
-}
-
-function plantsTheme() {
-    gameArea.empty();
-
-    /*depending on level, change how many 2's are inside imgCounter,*/
-    for (let j=1; j <= pairs; j++) {
-        imgCounter.push(2);
-    }
-    
-    /*Level 1: generate 2 pairs of 5 different images*/
-    for (let i=1; i < 11; i++) {
-        imgRandom = Math.floor(Math.random() * 5) + 1;
+    for (let i=0; i < pairs[currentLevel-1]*2; i++) {
+        imgRandom = Math.floor(Math.random() * pairs[currentLevel-1]) + 1;
         if(imgCounter[imgRandom-1] >= 1) {
             gameArea.append( 
                 `<div class="card-div ">
-                <img class ="card-img plants" src="images/plants/plants-${imgRandom}.jpg"> 
+                <img class ="card-img ${theme}" src="images/${theme}/${theme}-${imgRandom}.jpg"> 
                 </div>`
             );
             $("img").hide();
@@ -65,44 +38,18 @@ function plantsTheme() {
         } else {
             i--;
         }
-    }  
-}
-
-function covidTheme() {
-    gameArea.empty();
-
-    /*depending on level, change how many 2's are inside imgCounter,*/
-    for (let j=1; j <= pairs; j++) {
-        imgCounter.push(2);
     }
-    
-    /*Level 1: generate 2 pairs of 5 different images*/
-    for (let i=1; i < 11; i++) {
-        imgRandom = Math.floor(Math.random() * 5) + 1;
-        if(imgCounter[imgRandom-1] >= 1) {
-            gameArea.append( 
-                `<div class="card-div">
-                <img class ="card-img covid" src="images/covid/covid-${imgRandom}.jpg"> 
-                </div>`
-            );
-            $("img").hide();
-            /*limit the amount of the same image to 2*/
-            imgCounter[imgRandom-1]-=1; 
-        } else {
-            i--;
-        }
-    }  
 }
 
 $(".themes").click(function() {
     gameButton.attr("id", "start-button").children().text("Start Game");
 
-    if ($(this).html() == $(".cat").html()) {
-        catsTheme();
+    if ($(this).html() == $(".cats").html()) {
+        generateTheme("cats");
     } else if ($(this).html() == $(".plants").html()) {
-        plantsTheme();
+        generateTheme("plants");
     } else if ($(this).html() == $(".covid").html()) {
-        covidTheme();
+        generateTheme("covid");
     }
     /*enable game-button only if a theme is chosen*/
     gameButton.click(function() {
@@ -129,14 +76,13 @@ function startGame() {
 function restartGame() {
     let imgClass = $(".card-img").attr("class");
     /*reshuffle and hide the cards*/
-    if (imgClass === "card-img cat") {
-        catsTheme();
+    if (imgClass === "card-img cats") {
+        generateTheme("cats");
     } else if (imgClass === "card-img plants") {
-        plantsTheme();
+        generateTheme("plants");
     } else {
-        covidTheme();
+        generateTheme("covid");
     }
-
     startTimer();
 }
 
