@@ -10,7 +10,7 @@ if ($(window).width() <= 772) {
 /*variables*/
 let gameButton = $(".game-button");
 let gameArea = $(".game-area");
-let pairs = [1,8,10,15];
+let pairs = [5,8,10,15];
 let matchedPairs = 0;
 let currentLevel = 1;   
 let maxLevel = 1;
@@ -115,7 +115,7 @@ function checkCards() {
     }
 }
 
-function cardClick() {
+function cardClick() {          /* <----- simplify me!*/
     $(".card-div").click(function() {
         let cardImg = $(this).children();
 
@@ -152,7 +152,7 @@ function incrementMaxLevel() {
     } 
 }
 
-/*reminder to self: nextLevel and previousLevel will be called through an click event listener */    
+/*TODO: put limits on levels, change arrow colors*/    
 function nextLevel(){
     currentLevel++;
     $("#level").html(currentLevel);
