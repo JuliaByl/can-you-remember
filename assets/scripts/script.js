@@ -118,13 +118,13 @@ function cardClick() {
         let cardImg = $(this).children();
 
         if(cardImg.attr("style") === "display: none;") {
-           if($("#img-1").length) {
+           if($("#img-1").length === 0) {
                 cardImg.show();  
+                $(this).attr("id", "img-1");
+             } else if ($("#img-2").length === 0) {
+                cardImg.show(); 
                 $(this).attr("id", "img-2");
                 checkCards();
-             } else {
-                cardImg.show(); 
-                $(this).attr("id", "img-1");
              }
         }
     })
