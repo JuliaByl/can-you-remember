@@ -10,8 +10,9 @@ if ($(window).width() <= 772) {
 /*variables*/
 let gameButton = $(".game-button");
 let gameArea = $(".game-area");
-let pairs = [5,8,10,15];
-let currentLevel = 1;   /*TODO*/
+let pairs = [1,8,10,15];
+let matchedPairs = 0;
+let currentLevel = 1;   
 let maxLevel = 1;
 
 /*themes*/    
@@ -90,6 +91,7 @@ function restartGame() {
 function matchCard() {
     $("#img-1").attr("id", "");
     $("#img-2").attr("id", "");
+    levelClear();
 }
 
 function hideCards() {
@@ -130,14 +132,45 @@ function cardClick() {
     })
 }
 
-function levelClear() {}
-
-function stopTimer() {}
+function levelClear() {
+    matchedPairs++;
+    if(pairs[currentLevel-1] === matchedPairs) {
+        setTimeout(function() {
+            alert("Congratulations! You cleared the level. Click on the right arrow to get to the next level.");    
+        },500);
+        stopTimer();
+        incrementMaxLevel()
+    }
+}
 
 /*after a level is cleared*/
+function stopTimer() {}
 
-function nextLevel() {}
+function incrementMaxLevel() {
+    if(currentLevel === maxLevel) {
+        maxLevel++;
+    } 
+}
 
-/*after all levels are cleared*/
+/*reminder to self: nextLevel and previousLevel will be called through an click event listener */    
+function nextLevel(){
+    currentLevel++;
+    $("#level").html(currentLevel);
+}     
+
+function previousLevel(){
+    currentLevel--;
+    $("#level").html(currentLevel);
+} 
+
+$(".fa-arrow-circle-right").click(function() {
+    nextLevel();
+    console.log("next");
+})
+
+$(".fa-arrow-circle-left").click(function() {
+    previousLevel();
+    console.log("prev");
+})
 
 });
