@@ -41,33 +41,7 @@ $(document).ready(function() {
                 i--;
             }
         }
-    }
-    
-    $(".themes").click(function() {
-        generateStartButton();
-        currentLevel = 1;
-        $("#level").html(currentLevel);
-    
-        if ($(this).html() == $(".cats").html()) {
-            theme = "cats";
-        } else if ($(this).html() == $(".plants").html()) {
-            theme = "plants";
-        } else if ($(this).html() == $(".covid").html()) {
-            theme = "covid";
-        }
-        generateTheme();
-        /*enable game-button only if a theme is chosen*/
-        gameButton.click(function() {
-            matchedPairs = 0;
-            if(gameButton.attr("id") === "start-button") {
-                startClick();
-                cardClick();
-            } else {
-                restartClick();
-                cardClick();
-            }
-        })
-    }); 
+    } 
     
     /*start game functions*/
     function startTimer() {
@@ -121,23 +95,6 @@ $(document).ready(function() {
         }
     }
     
-    function cardClick() {          /* <----- simplify me!*/
-        $(".card-div").click(function() {
-            let cardImg = $(this).children();
-    
-            if(cardImg.attr("style") === "display: none;") {
-               if($("#img-1").length === 0) {
-                    cardImg.show();  
-                    $(this).attr("id", "img-1");
-                 } else if ($("#img-2").length === 0) {
-                    cardImg.show(); 
-                    $(this).attr("id", "img-2");
-                    checkCards();
-                 }
-            }
-        })
-    }
-    
     function levelClear() {
             if(currentLevel === 1) {
                 setTimeout(function() {
@@ -161,7 +118,7 @@ $(document).ready(function() {
         }
     }
     
-    /*TODO: change arrow colors, fix start button when changing level*/    
+    /*TODO: change arrow colors*/    
     function nextLevel(){
         if(currentLevel === 4) {
             alert("No more levels, you're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
@@ -180,6 +137,53 @@ $(document).ready(function() {
         generateStartButton();
     } 
     
+     /*event listeners*/
+     /*cardClick should only work when the function is called after choosing a theme and clicking GameButton*/
+     function cardClick() {          
+        $(".card-div").click(function() {
+            let cardImg = $(this).children();
+    
+            if(cardImg.attr("style") === "display: none;") {
+               if($("#img-1").length === 0) {
+                    cardImg.show();  
+                    $(this).attr("id", "img-1");
+                 } else if ($("#img-2").length === 0) {
+                    cardImg.show(); 
+                    $(this).attr("id", "img-2");
+                    checkCards();
+                 }
+            }
+        })
+    }
+    
+     /*choosing a theme*/
+     $(".themes").click(function() {
+        generateStartButton();
+        currentLevel = 1;
+        $("#level").html(currentLevel);
+    
+        if ($(this).html() == $(".cats").html()) {
+            theme = "cats";
+        } else if ($(this).html() == $(".plants").html()) {
+            theme = "plants";
+        } else if ($(this).html() == $(".covid").html()) {
+            theme = "covid";
+        }
+        generateTheme();
+        /*enable game-button only if a theme is chosen*/
+        gameButton.click(function() {
+            matchedPairs = 0;
+            if(gameButton.attr("id") === "start-button") {
+                startClick();
+                cardClick();
+            } else {
+                restartClick();
+                cardClick();
+            }
+        })
+    });
+
+    /*navigating through levels*/
     $(".fa-arrow-circle-right").click(function() {
         if(currentLevel < maxLevel) {
             nextLevel();
