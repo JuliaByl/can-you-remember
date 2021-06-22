@@ -46,6 +46,7 @@ $(document).ready(function() {
     $(".themes").click(function() {
         generateStartButton();
         currentLevel = 1;
+        $("#level").html(currentLevel);
     
         if ($(this).html() == $(".cats").html()) {
             theme = "cats";
