@@ -25,7 +25,7 @@ $(document).ready(function() {
             imgCounter.push(2);
         }
         
-        /*Level 1: generate 2 pairs of 5 different images*/
+        /*generate 2 pairs of 5 different images*/
         for (let i=0; i < pairs[currentLevel-1]*2; i++) {
             imgRandom = Math.floor(Math.random() * pairs[currentLevel-1]) + 1;
             if(imgCounter[imgRandom-1] >= 1) {
@@ -44,7 +44,7 @@ $(document).ready(function() {
     }
     
     $(".themes").click(function() {
-        gameButton.attr("id", "start-button").children().text("Start Game");
+        generateStartButton();
         currentLevel = 1;
     
         if ($(this).html() == $(".cats").html()) {
@@ -59,10 +59,10 @@ $(document).ready(function() {
         gameButton.click(function() {
             matchedPairs = 0;
             if(gameButton.attr("id") === "start-button") {
-                startGame();
+                startClick();
                 cardClick();
             } else {
-                restartGame();
+                restartClick();
                 cardClick();
             }
         })
@@ -73,15 +73,19 @@ $(document).ready(function() {
     
     }
     
-    function startGame() {
+    function startClick() {
         gameButton.attr("id", "restart-button").children().text("Restart Game");
         startTimer();
     }
     
-    function restartGame() {
+    function restartClick() {
         /*reshuffle and hide the cards*/
         generateTheme();
         startTimer();
+    }
+
+    function generateStartButton() {
+        gameButton.attr("id", "start-button").children().text("Start Game");
     }
     
     /*during game per level*/
@@ -156,14 +160,15 @@ $(document).ready(function() {
         }
     }
     
-    /*TODO: put limits on levels, change arrow colors, fix start button when changing level*/    
+    /*TODO: change arrow colors, fix start button when changing level*/    
     function nextLevel(){
         if(currentLevel === 4) {
-            alert("No more levels, your're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
+            alert("No more levels, you're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
         } else {
             currentLevel++;
         $("#level").html(currentLevel);
         generateTheme();
+        generateStartButton();
         }
     }     
     
@@ -171,6 +176,7 @@ $(document).ready(function() {
         currentLevel--;
         $("#level").html(currentLevel);
         generateTheme();
+        generateStartButton();
     } 
     
     $(".fa-arrow-circle-right").click(function() {
