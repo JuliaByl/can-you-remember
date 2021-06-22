@@ -10,7 +10,7 @@ $(document).ready(function() {
     /*variables*/
     let gameButton = $(".game-button");
     let gameArea = $(".game-area");
-    let pairs = [1,1,1,1];
+    const pairs = [5,8,10,15];
     let matchedPairs = 0;
     let currentLevel = 1;   
     let maxLevel = 1;
