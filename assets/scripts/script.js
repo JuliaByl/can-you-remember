@@ -10,7 +10,7 @@ $(document).ready(function() {
     /*variables*/
     let gameButton = $(".game-button");
     let gameArea = $(".game-area");
-    let pairs = [5,8,10,15];
+    let pairs = [1,1,1,1];
     let matchedPairs = 0;
     let currentLevel = 1;   
     let maxLevel = 1;
@@ -134,9 +134,15 @@ $(document).ready(function() {
     }
     
     function levelClear() {
-            setTimeout(function() {
-                alert("Congratulations! You cleared the level. Click on the right arrow to get to the next level.");    
-            },500);
+            if(currentLevel === 1) {
+                setTimeout(function() {
+                    alert("Congratulations! You cleared the level. Click on the right arrow to get to the next level.");    
+                },500);
+            } else if(currentLevel === 4) {
+                setTimeout(function() {
+                    alert("You cleared all the levels. Congratulations!");    
+                },500);
+            }
             stopTimer();
             incrementMaxLevel()
     }
@@ -152,9 +158,13 @@ $(document).ready(function() {
     
     /*TODO: put limits on levels, change arrow colors, fix start button when changing level*/    
     function nextLevel(){
-        currentLevel++;
+        if(currentLevel === 4) {
+            alert("No more levels, your're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
+        } else {
+            currentLevel++;
         $("#level").html(currentLevel);
         generateTheme();
+        }
     }     
     
     function previousLevel(){
