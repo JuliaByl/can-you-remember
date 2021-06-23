@@ -16,7 +16,7 @@ $(document).ready(function() {
     let maxLevel = 1;
     let theme;
     
-    /*themes*/    
+    /*themes*/
     function generateTheme() {
         let imgCounter = [];
         gameArea.empty();
@@ -24,7 +24,6 @@ $(document).ready(function() {
         for (let j=1; j <= pairs[currentLevel-1]; j++) {
             imgCounter.push(2);
         }
-        
         /*generate 2 pairs of 5 different images*/
         for (let i=0; i < pairs[currentLevel-1]*2; i++) {
             imgRandom = Math.floor(Math.random() * pairs[currentLevel-1]) + 1;
@@ -96,17 +95,16 @@ $(document).ready(function() {
     }
     
     function levelClear() {
-            if(currentLevel === 1) {
-                setTimeout(function() {
-                    alert("Congratulations! You cleared the level. Click on the right arrow to get to the next level.");    
-                },500);
-            } else if(currentLevel === 4) {
+            if(currentLevel === 4) {
                 setTimeout(function() {
                     alert("You cleared all the levels. Congratulations!");    
                 },500);
+                $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#dc3545");
+            } else {
+                $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#28a745");
             }
             stopTimer();
-            incrementMaxLevel()
+            incrementMaxLevel();
     }
     
     /*after a level is cleared*/
@@ -160,7 +158,11 @@ $(document).ready(function() {
      $(".themes").click(function() {
         generateStartButton();
         currentLevel = 1;
+        maxLevel = 1;
         $("#level").html(currentLevel);
+        /*reset arrows*/
+        $(".fa-arrow-alt-circle-left").removeClass("fas").addClass("far").css("color", "#005B62");
+        $(".fa-arrow-alt-circle-right").removeClass("fas").addClass("far").css("color", "#005B62");
     
         if ($(this).html() == $(".cats").html()) {
             theme = "cats";
@@ -184,15 +186,26 @@ $(document).ready(function() {
     });
 
     /*navigating through levels*/
-    $(".fa-arrow-circle-right").click(function() {
+    $(".fa-arrow-alt-circle-right").click(function() {
         if(currentLevel < maxLevel) {
+            if(currentLevel === 1) {
+                $(".fa-arrow-alt-circle-left").removeClass("far").addClass("fas").css("color", "#28a745");
+            }
             nextLevel();
+            if(currentLevel === maxLevel) {
+                $(".fa-arrow-alt-circle-right").removeClass("fas").addClass("far").css("color", "#005B62");
+            } 
         } 
     })
     
-    $(".fa-arrow-circle-left").click(function() {
+    $(".fa-arrow-alt-circle-left").click(function() {
         if(currentLevel > 1) {
             previousLevel();
+            $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#28a745"); 
+
+            if(currentLevel === 1) {
+                $(".fa-arrow-alt-circle-left").removeClass("fas").addClass("far").css("color", "#005B62");
+            }
         } 
     }) 
 });
