@@ -15,6 +15,11 @@ $(document).ready(function() {
     let currentLevel = 1;   
     let maxLevel = 1;
     let theme;
+    let trackerStart = false;
+    let startDate;
+    let tracker = $("#tracker");
+    let date;
+    let time, min, sec, mili;
     
     /*themes*/
     function generateTheme() {
@@ -43,8 +48,39 @@ $(document).ready(function() {
     } 
     
     /*start game functions*/
+    function updateTimer() {
+        if(trackerStart) {
+        date = new Date();
+        time = date - startDate;
+        mili = time;
+        sec = mili / 1000;
+        min = parseInt(sec / 60);
+        mili = mili % 1000;
+        sec = parseInt(sec % 60);
+
+        if(mili < 10) {
+            mili = "00" + mili;
+        } else if(mili < 100) {
+            mili = "0" + mili;
+        }
+        if(sec < 10) {
+            sec = "0" + sec;
+        }
+        if(min < 10) {
+            min = "0" + min;
+        }
+
+        tracker.html(`${min} : ${sec} : ${mili}`);
+        setTimeout(function() {
+            updateTimer()
+        },1);
+        }
+    }
+
     function startTimer() {
-    
+        trackerStart = true;
+        startDate = new Date();
+        updateTimer();    
     }
     
     function startClick() {
@@ -116,7 +152,6 @@ $(document).ready(function() {
         }
     }
     
-    /*TODO: change arrow colors*/    
     function nextLevel(){
         if(currentLevel === 4) {
             alert("No more levels, you're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
