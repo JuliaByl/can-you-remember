@@ -15,12 +15,15 @@ $(document).ready(function() {
     let timer = $("#timer");
     let date;
     let time, min, sec, mili;
+    let bestTimeHtml = $("#best-time");
+    let currentBestTime = Infinity;
     
     /*themes*/
     function generateTheme() {
         let imgCounter = [];
         gameArea.empty();
         stopTimer();
+        resetTimer()
         /*depending on level, change how many 2's are inside imgCounter,*/
         for (let j=1; j <= pairs[currentLevel-1]; j++) {
             imgCounter.push(2);
@@ -44,10 +47,7 @@ $(document).ready(function() {
     } 
     
     /*start game functions*/
-    function updateTimer() {
-        if(timerStart) {
-        date = new Date();
-        time = date - startDate;
+    function convertTime() {
         mili = time;
         sec = mili / 1000;
         min = parseInt(sec / 60);
@@ -65,8 +65,16 @@ $(document).ready(function() {
         if(min < 10) {
             min = "0" + min;
         }
+        return `${min} : ${sec} : ${mili}`;
 
-        timer.html(`${min} : ${sec} : ${mili}`);
+    }
+
+    function updateTimer() {
+        if(timerStart) {
+        date = new Date();
+        time = date - startDate;
+
+        timer.html(convertTime());
         setTimeout(function() {
             updateTimer()
         },1);
@@ -140,8 +148,16 @@ $(document).ready(function() {
     }
     
     /*after a level is cleared*/
+    function resetTimer() {
+        timer.html("00:00:00");
+    }
+
     function stopTimer() {
         timerStart = false;
+        if(currentBestTime > time) {
+            currentBestTime = time;
+            bestTimeHtml.html(timer.html());
+        }
         /*TODO: send result to scoreboard/"best time"*/
 
     }
