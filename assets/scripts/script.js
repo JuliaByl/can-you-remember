@@ -1,12 +1,7 @@
 $(document).ready(function() {
 
-    if ($(window).width() <= 772) {
-        $('.hamburger-menu').append($('.game-button'));
-        $('#big-menu').remove();
-    } else {
-        $('.hamburger-menu')[0].remove(); 
-    }
-    
+    interactiveStyling()
+
     /*variables*/
     let gameButton = $(".game-button");
     let gameArea = $(".game-area");
@@ -15,9 +10,9 @@ $(document).ready(function() {
     let currentLevel = 1;   
     let maxLevel = 1;
     let theme;
-    let trackerStart = false;
+    let timerStart = false;
     let startDate;
-    let tracker = $("#tracker");
+    let timer = $("#timer");
     let date;
     let time, min, sec, mili;
     
@@ -25,6 +20,7 @@ $(document).ready(function() {
     function generateTheme() {
         let imgCounter = [];
         gameArea.empty();
+        stopTimer();
         /*depending on level, change how many 2's are inside imgCounter,*/
         for (let j=1; j <= pairs[currentLevel-1]; j++) {
             imgCounter.push(2);
@@ -49,7 +45,7 @@ $(document).ready(function() {
     
     /*start game functions*/
     function updateTimer() {
-        if(trackerStart) {
+        if(timerStart) {
         date = new Date();
         time = date - startDate;
         mili = time;
@@ -70,7 +66,7 @@ $(document).ready(function() {
             min = "0" + min;
         }
 
-        tracker.html(`${min} : ${sec} : ${mili}`);
+        timer.html(`${min} : ${sec} : ${mili}`);
         setTimeout(function() {
             updateTimer()
         },1);
@@ -78,7 +74,7 @@ $(document).ready(function() {
     }
 
     function startTimer() {
-        trackerStart = true;
+        timerStart = true;
         startDate = new Date();
         updateTimer();    
     }
@@ -144,7 +140,11 @@ $(document).ready(function() {
     }
     
     /*after a level is cleared*/
-    function stopTimer() {}
+    function stopTimer() {
+        timerStart = false;
+        /*TODO: send result to scoreboard/"best time"*/
+
+    }
     
     function incrementMaxLevel() {
         if(currentLevel === maxLevel) {
@@ -244,4 +244,15 @@ $(document).ready(function() {
         } 
     }) 
 });
+
+/*interactive styling*/
+function interactiveStyling(){
+    if ($(window).width() <= 772) {
+        $('.hamburger-menu').append($('.game-button'));
+        $('#big-menu').remove();
+    } else {
+        $('.hamburger-menu')[0].remove(); 
+    }
+}
+
     
