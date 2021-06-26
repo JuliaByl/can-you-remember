@@ -16,7 +16,10 @@ $(document).ready(function() {
     let date;
     let time, min, sec, mili;
     let bestTimeHtml = $("#best-time");
-    let currentBestTime = Infinity;
+    let bestTimeCats = [Infinity,Infinity,Infinity,Infinity];
+    let bestTimePlants = [Infinity,Infinity,Infinity,Infinity];
+    let bestTimeCovid = [Infinity,Infinity,Infinity,Infinity];
+
     
     /*themes*/
     function generateTheme() {
@@ -154,12 +157,24 @@ $(document).ready(function() {
 
     function stopTimer() {
         timerStart = false;
-        if(currentBestTime > time) {
-            currentBestTime = time;
-            bestTimeHtml.html(timer.html());
-        }
-        /*TODO: send result to scoreboard/"best time"*/
 
+        if(theme === "cats") {
+            if(bestTimeCats[currentLevel-1] > time) {
+                bestTimeCats[currentLevel-1] = time;
+                bestTimeHtml.html(timer.html());
+            }
+        } else if(theme === "plants") {
+            if(bestTimePlants[currentLevel-1] > time) {
+                bestTimePlants[currentLevel-1] = time;
+                bestTimeHtml.html(timer.html());
+            } 
+        } else {
+            if(bestTimeCovid[currentLevel-1] > time) {
+                bestTimeCovid[currentLevel-1] = time;
+                bestTimeHtml.html(timer.html());
+            }
+        }
+        time = Infinity;   
     }
     
     function incrementMaxLevel() {
@@ -178,10 +193,10 @@ $(document).ready(function() {
         generateStartButton();
         }
     }     
-    
+                                   /*TODO: clean up code and fix custom highscore per level*/      
     function previousLevel(){
         currentLevel--;
-        $("#level").html(currentLevel);
+        $("#level").html(currentLevel); 
         generateTheme();
         generateStartButton();
     } 
