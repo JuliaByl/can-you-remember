@@ -5,7 +5,7 @@ $(document).ready(function () {
 /*variables*/
 let gameButton = $(".game-button");
 let gameArea = $(".game-area");
-const pairs = [1, 1, 1, 1];
+const pairs = [5, 8, 10, 15];
 let matchedPairs = 0;
 let currentLevel = 1;
 let maxLevel = 1;
@@ -24,6 +24,16 @@ let bestTimeHtml = $("#best-time");
 let bestTimeCats = [Infinity, Infinity, Infinity, Infinity];
 let bestTimePlants = [Infinity, Infinity, Infinity, Infinity];
 let bestTimeCovid = [Infinity, Infinity, Infinity, Infinity];
+
+
+function enableDarkMode() {
+    if($(".dark-mode-btn").prop("checked")) {
+        $("body").attr("id", "dark-mode");
+    } else {
+        $("body").removeAttr("id");    
+    }
+}
+enableDarkMode();
 
 /*themes*/
 function generateTheme() {
@@ -338,6 +348,11 @@ $(".reset").click(function () {
     $("#level").html("1");
     bestTimeHtml.html("00:00:00");
     colorArrows();
+})
+
+/*enables/disables dark mode styling*/
+$(".dark-mode-btn").click(function() {
+    enableDarkMode();
 })
 
 /*interactive styling*/
