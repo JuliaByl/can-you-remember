@@ -1,25 +1,38 @@
 $(document).ready(function() {
 
-    if ($(window).width() <= 772) {
-        $('.hamburger-menu').append($('.game-button'));
-        $('#big-menu').remove();
-    } else {
-        $('.hamburger-menu')[0].remove(); 
-    }
-    
+    interactiveStyling();
+
     /*variables*/
     let gameButton = $(".game-button");
     let gameArea = $(".game-area");
     const pairs = [5,8,10,15];
     let matchedPairs = 0;
     let currentLevel = 1;   
-    let maxLevel = 1;
+    let maxLevel =1;
+    let catsMaxLevel = 1;
+    let plantsMaxLevel = 1;
+    let covidMaxLevel = 1;
     let theme;
+    let nextArrow = $(".fa-arrow-alt-circle-right");
+    let prevArrow = $(".fa-arrow-alt-circle-left");
+    let timerStart = false;
+    let startDate;
+    let timer = $("#timer");
+    let date;
+    let time, min, sec, mili;
+    let bestTimeHtml = $("#best-time");
+    let bestTimeCats = [Infinity,Infinity,Infinity,Infinity];
+    let bestTimePlants = [Infinity,Infinity,Infinity,Infinity];
+    let bestTimeCovid = [Infinity,Infinity,Infinity,Infinity];
+
     
     /*themes*/
     function generateTheme() {
         let imgCounter = [];
         gameArea.empty();
+        stopTimer();
+        resetTimer();
+        updateBestTime();
         /*depending on level, change how many 2's are inside imgCounter,*/
         for (let j=1; j <= pairs[currentLevel-1]; j++) {
             imgCounter.push(2);
@@ -43,8 +56,48 @@ $(document).ready(function() {
     } 
     
     /*start game functions*/
+    function convertTime(record) {
+        if(record === undefined) {
+            mili = time;
+        } else {
+            mili = record;
+        }
+        sec = mili / 1000;
+        min = parseInt(sec / 60);
+        mili = mili % 1000;
+        sec = parseInt(sec % 60);
+
+        if(mili < 10) {
+            mili = "00" + mili;
+        } else if(mili < 100) {
+            mili = "0" + mili;
+        }
+        if(sec < 10) {
+            sec = "0" + sec;
+        }
+        if(min < 10) {
+            min = "0" + min;
+        }
+        return `${min} : ${sec} : ${mili}`;
+
+    }
+
+    function updateTimer() {
+        if(timerStart) {
+        date = new Date();
+        time = date - startDate;
+
+        timer.html(convertTime());
+        setTimeout(function() {
+            updateTimer()
+        },1);
+        }
+    }
+
     function startTimer() {
-    
+        timerStart = true;
+        startDate = new Date();
+        updateTimer();    
     }
     
     function startClick() {
@@ -99,16 +152,56 @@ $(document).ready(function() {
                 setTimeout(function() {
                     alert("You cleared all the levels. Congratulations!");    
                 },500);
-                $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#dc3545");
+                nextArrow.removeClass("far").addClass("fas").css("color", "#dc3545");
             } else {
-                $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#28a745");
+                nextArrow.removeClass("far").addClass("fas").css("color", "#28a745");
             }
             stopTimer();
             incrementMaxLevel();
     }
     
     /*after a level is cleared*/
-    function stopTimer() {}
+    /*shows the highscore for each theme and each level*/
+    function updateBestTime() {
+        if(theme === "cats") {
+            if (bestTimeCats[currentLevel-1] > time) {
+                bestTimeCats[currentLevel-1] = time;
+            }
+            if (bestTimeCats[currentLevel-1] === Infinity) {
+                bestTimeHtml.html(convertTime(0));
+            } else {
+                bestTimeHtml.html(convertTime(bestTimeCats[currentLevel - 1]));
+            }
+        } else if(theme === "plants") {
+            if (bestTimePlants[currentLevel-1] > time) {
+                bestTimePlants[currentLevel-1] = time;
+            } 
+            if (bestTimePlants[currentLevel-1] === Infinity) {
+                bestTimeHtml.html(convertTime(0));
+            } else {
+                bestTimeHtml.html(convertTime(bestTimePlants[currentLevel - 1])); 
+            }
+        } else {
+            if (bestTimeCovid[currentLevel-1] > time) {
+                bestTimeCovid[currentLevel-1] = time;
+            } 
+            if(bestTimeCovid[currentLevel-1] === Infinity) {
+                bestTimeHtml.html(convertTime(0));
+            } else {
+                bestTimeHtml.html(convertTime(bestTimeCovid[currentLevel - 1]));
+            }
+        }       
+        time = Infinity;   
+    }
+
+    function resetTimer() {
+        timer.html("00:00:00");
+    }
+
+    function stopTimer() {
+        timerStart = false;
+        updateBestTime();
+    }
     
     function incrementMaxLevel() {
         if(currentLevel === maxLevel) {
@@ -116,7 +209,39 @@ $(document).ready(function() {
         }
     }
     
-    /*TODO: change arrow colors*/    
+    function colorArrows() {
+        if(currentLevel === 1) {
+            prevArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        } else {
+            prevArrow.removeClass("far").addClass("fas").css("color", "#28a745");
+        }
+        if(currentLevel === maxLevel) {
+            nextArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        } else {
+            nextArrow.removeClass("far").addClass("fas").css("color", "#28a745");
+        }
+    }
+
+    function getMaxLevel() {
+        if(theme === "cats") {
+            maxLevel = catsMaxLevel;
+        } else if(theme === "plants") {
+            maxLevel = plantsMaxLevel;
+        } else if(theme === "covid") {
+            maxLevel = covidMaxLevel;
+        }
+    }
+
+    function updateMaxLevel() {
+        if (theme === "cats" && maxLevel > catsMaxLevel) {
+            catsMaxLevel = maxLevel;
+        } else if (theme === "plants" && maxLevel > plantsMaxLevel) {
+            plantsMaxLevel = maxLevel;
+        } else if(theme === "covid" && maxLevel > covidMaxLevel) {
+            covidMaxLevel = maxLevel;
+        }
+    }
+
     function nextLevel(){
         if(currentLevel === 4) {
             alert("No more levels, you're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
@@ -124,14 +249,16 @@ $(document).ready(function() {
             currentLevel++;
         $("#level").html(currentLevel);
         generateTheme();
+        colorArrows();
         generateStartButton();
         }
     }     
-    
+                                   /*TODO: clean up code and stop game from starting over when changing theme*/      
     function previousLevel(){
         currentLevel--;
-        $("#level").html(currentLevel);
+        $("#level").html(currentLevel); 
         generateTheme();
+        colorArrows();
         generateStartButton();
     } 
     
@@ -158,11 +285,9 @@ $(document).ready(function() {
      $(".themes").click(function() {
         generateStartButton();
         currentLevel = 1;
-        maxLevel = 1;
         $("#level").html(currentLevel);
+        updateMaxLevel()
         /*reset arrows*/
-        $(".fa-arrow-alt-circle-left").removeClass("fas").addClass("far").css("color", "#005B62");
-        $(".fa-arrow-alt-circle-right").removeClass("fas").addClass("far").css("color", "#005B62");
     
         if ($(this).html() == $(".cats").html()) {
             theme = "cats";
@@ -171,6 +296,9 @@ $(document).ready(function() {
         } else if ($(this).html() == $(".covid").html()) {
             theme = "covid";
         }
+
+        getMaxLevel();
+        colorArrows();
         generateTheme();
         /*enable game-button only if a theme is chosen*/
         gameButton.click(function() {
@@ -186,27 +314,27 @@ $(document).ready(function() {
     });
 
     /*navigating through levels*/
-    $(".fa-arrow-alt-circle-right").click(function() {
-        if(currentLevel < maxLevel) {
-            if(currentLevel === 1) {
-                $(".fa-arrow-alt-circle-left").removeClass("far").addClass("fas").css("color", "#28a745");
-            }
+    nextArrow.click(function() {
+        if(maxLevel > currentLevel) {
             nextLevel();
-            if(currentLevel === maxLevel) {
-                $(".fa-arrow-alt-circle-right").removeClass("fas").addClass("far").css("color", "#005B62");
-            } 
-        } 
+        }
     })
     
-    $(".fa-arrow-alt-circle-left").click(function() {
+    prevArrow.click(function() {
         if(currentLevel > 1) {
             previousLevel();
-            $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#28a745"); 
-
-            if(currentLevel === 1) {
-                $(".fa-arrow-alt-circle-left").removeClass("fas").addClass("far").css("color", "#005B62");
-            }
         } 
     }) 
 });
+
+/*interactive styling*/
+function interactiveStyling(){
+    if ($(window).width() <= 772) {
+        $('.hamburger-menu').append($('.game-button'));
+        $('#big-menu').remove();
+    } else {
+        $('.hamburger-menu')[0].remove(); 
+    }
+}
+
     
