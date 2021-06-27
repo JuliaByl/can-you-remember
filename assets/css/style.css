@@ -44,7 +44,7 @@ h1 {
     border: solid #4ED0CE;
 }
 
-.bottom-area, .dropdown-header, h1{
+.bottom-area, .dropdown-header, h1, .fa-ellipsis-h {
     color: #005B62;
 }
 
@@ -80,10 +80,7 @@ li > .fas {
     height: 50px;
 }
 
-/*interactive styling for demon mode- and dark mode-button, incl. colors.
-Please note - I mainly looked up in dev tools how bootstrap 
-(find link under Acknowledgements in README.md) applied their colors and did the same.
-*/
+/*interactive styling for demon mode- and dark mode-button, incl. colors*/
 .btn-danger > .custom-control-label::after, 
 .dropdown-item > .custom-control-label::after,
 .custom-control-input:checked~.custom-control-label::before {
@@ -129,8 +126,12 @@ footer {
         margin: 0;
     }
 
-    .game-area {
+    .game-area, body {
         background-color: #4ED0CE;
+    }
+
+    #dark-mode, #dark-mode .game-area {
+        background-color: hsl(179, 58%, 26%);
     }
 
     .card-div {
@@ -139,7 +140,7 @@ footer {
 }
 
 /*dark mode styling*/
-#dark-mode .game-container {
+#dark-mode .game-container{
     background-color: hsl(179, 58%,26%);
 }
 
@@ -160,8 +161,8 @@ footer {
     background-color: #fff;
 }
 
-#dark-mode .game-area {
-    color: hsl(184, 80%, 79%);
+#dark-mode .game-area, #dark-mode h1, #dark-mode .fa-ellipsis-h {
+    color: hsl(184, 80%, 79%); 
 }
 
 #dark-mode .card-div {
