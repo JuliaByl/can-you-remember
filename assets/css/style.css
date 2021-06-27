@@ -130,7 +130,7 @@ footer {
         background-color: #4ED0CE;
     }
 
-    #dark-mode, #dark-mode .game-area {
+    .dark-mode, .dark-mode .game-area {
         background-color: hsl(179, 58%, 26%);
     }
 
@@ -140,36 +140,36 @@ footer {
 }
 
 /*dark mode styling*/
-#dark-mode .game-container{
+.dark-mode .game-container{
     background-color: hsl(179, 58%,26%);
 }
 
-#dark-mode .full-menu {
+.dark-mode .full-menu {
     background-color: hsl(189, 53%, 26%);
 }
 
-#dark-mode .dropdown-menu, #dark-mode .dropdown-item {
+.dark-mode .dropdown-menu, .dark-mode .dropdown-item {
     background-color: hsl(189, 53%, 26%);
     color: #fff;
 }
 
-#dark-mode .btn-outline-light:hover,
-#dark-mode .dropdown-item:hover,
-#dark-mode .show>.btn-outline-light.dropdown-toggle,
-#dark-mode .btn-outline-light:hover {
+.dark-mode .btn-outline-light:hover,
+.dark-mode .dropdown-item:hover,
+.dark-mode .show>.btn-outline-light.dropdown-toggle,
+.dark-mode .btn-outline-light:hover {
     color: hsl(189, 53%, 26%);
     background-color: #fff;
 }
 
-#dark-mode .game-area, #dark-mode h1, #dark-mode .fa-ellipsis-h {
+.dark-mode .game-area, .dark-mode h1, .dark-mode .fa-ellipsis-h {
     color: hsl(184, 80%, 79%); 
 }
 
-#dark-mode .card-div {
+.dark-mode .card-div {
     background-color: rgb(159, 239, 244);
     border: solid hsl(179, 58%,26%);
 }
 
-#dark-mode .bottom-area, #dark-mode .dropdown-header{
+.dark-mode .bottom-area, .dark-mode .dropdown-header{
     color: hsl(184, 80%, 79%);
 }
