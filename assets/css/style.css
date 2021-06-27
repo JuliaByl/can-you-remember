@@ -137,3 +137,38 @@ footer {
         max-height: 12.5vh;
     }
 }
+
+/*dark mode styling*/
+#dark-mode .game-container {
+    background-color: hsl(179, 58%,26%);
+}
+
+#dark-mode .full-menu {
+    background-color: hsl(189, 53%, 26%);
+}
+
+#dark-mode .dropdown-menu, #dark-mode .dropdown-item {
+    background-color: hsl(189, 53%, 26%);
+    color: #fff;
+}
+
+#dark-mode .btn-outline-light:hover,
+#dark-mode .dropdown-item:hover,
+#dark-mode .show>.btn-outline-light.dropdown-toggle,
+#dark-mode .btn-outline-light:hover {
+    color: hsl(189, 53%, 26%);
+    background-color: #fff;
+}
+
+#dark-mode .game-area {
+    color: hsl(184, 80%, 79%);
+}
+
+#dark-mode .card-div {
+    background-color: rgb(159, 239, 244);
+    border: solid hsl(179, 58%,26%);
+}
+
+#dark-mode .bottom-area, #dark-mode .dropdown-header{
+    color: hsl(184, 80%, 79%);
+}
