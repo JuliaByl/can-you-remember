@@ -8,8 +8,13 @@ $(document).ready(function() {
     const pairs = [5,8,10,15];
     let matchedPairs = 0;
     let currentLevel = 1;   
-    let maxLevel = 1;
+    let maxLevel =1;
+    let catsMaxLevel = 1;
+    let plantsMaxLevel = 1;
+    let covidMaxLevel = 1;
     let theme;
+    let nextArrow = $(".fa-arrow-alt-circle-right");
+    let prevArrow = $(".fa-arrow-alt-circle-left");
     let timerStart = false;
     let startDate;
     let timer = $("#timer");
@@ -147,9 +152,9 @@ $(document).ready(function() {
                 setTimeout(function() {
                     alert("You cleared all the levels. Congratulations!");    
                 },500);
-                $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#dc3545");
+                nextArrow.removeClass("far").addClass("fas").css("color", "#dc3545");
             } else {
-                $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#28a745");
+                nextArrow.removeClass("far").addClass("fas").css("color", "#28a745");
             }
             stopTimer();
             incrementMaxLevel();
@@ -204,6 +209,39 @@ $(document).ready(function() {
         }
     }
     
+    function colorArrows() {
+        if(currentLevel === 1) {
+            prevArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        } else {
+            prevArrow.removeClass("far").addClass("fas").css("color", "#28a745");
+        }
+        if(currentLevel === maxLevel) {
+            nextArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        } else {
+            nextArrow.removeClass("far").addClass("fas").css("color", "#28a745");
+        }
+    }
+
+    function getMaxLevel() {
+        if(theme === "cats") {
+            maxLevel = catsMaxLevel;
+        } else if(theme === "plants") {
+            maxLevel = plantsMaxLevel;
+        } else if(theme === "covid") {
+            maxLevel = covidMaxLevel;
+        }
+    }
+
+    function updateMaxLevel() {
+        if (theme === "cats" && maxLevel > catsMaxLevel) {
+            catsMaxLevel = maxLevel;
+        } else if (theme === "plants" && maxLevel > plantsMaxLevel) {
+            plantsMaxLevel = maxLevel;
+        } else if(theme === "covid" && maxLevel > covidMaxLevel) {
+            covidMaxLevel = maxLevel;
+        }
+    }
+
     function nextLevel(){
         if(currentLevel === 4) {
             alert("No more levels, you're simply too skilled for this game. Why don't you try out any of the other themes or try to beat your highscore on previous levels?");
@@ -211,14 +249,16 @@ $(document).ready(function() {
             currentLevel++;
         $("#level").html(currentLevel);
         generateTheme();
+        colorArrows();
         generateStartButton();
         }
     }     
-                                   /*TODO: clean up code and fix custom highscore per level*/      
+                                   /*TODO: clean up code and stop game from starting over when changing theme*/      
     function previousLevel(){
         currentLevel--;
         $("#level").html(currentLevel); 
         generateTheme();
+        colorArrows();
         generateStartButton();
     } 
     
@@ -245,11 +285,9 @@ $(document).ready(function() {
      $(".themes").click(function() {
         generateStartButton();
         currentLevel = 1;
-        maxLevel = 1;
         $("#level").html(currentLevel);
+        updateMaxLevel()
         /*reset arrows*/
-        $(".fa-arrow-alt-circle-left").removeClass("fas").addClass("far").css("color", "#005B62");
-        $(".fa-arrow-alt-circle-right").removeClass("fas").addClass("far").css("color", "#005B62");
     
         if ($(this).html() == $(".cats").html()) {
             theme = "cats";
@@ -258,6 +296,9 @@ $(document).ready(function() {
         } else if ($(this).html() == $(".covid").html()) {
             theme = "covid";
         }
+
+        getMaxLevel();
+        colorArrows();
         generateTheme();
         /*enable game-button only if a theme is chosen*/
         gameButton.click(function() {
@@ -273,26 +314,15 @@ $(document).ready(function() {
     });
 
     /*navigating through levels*/
-    $(".fa-arrow-alt-circle-right").click(function() {
-        if(currentLevel < maxLevel) {
-            if(currentLevel === 1) {
-                $(".fa-arrow-alt-circle-left").removeClass("far").addClass("fas").css("color", "#28a745");
-            }
+    nextArrow.click(function() {
+        if(maxLevel > currentLevel) {
             nextLevel();
-            if(currentLevel === maxLevel) {
-                $(".fa-arrow-alt-circle-right").removeClass("fas").addClass("far").css("color", "#005B62");
-            } 
-        } 
+        }
     })
     
-    $(".fa-arrow-alt-circle-left").click(function() {
+    prevArrow.click(function() {
         if(currentLevel > 1) {
             previousLevel();
-            $(".fa-arrow-alt-circle-right").removeClass("far").addClass("fas").css("color", "#28a745"); 
-
-            if(currentLevel === 1) {
-                $(".fa-arrow-alt-circle-left").removeClass("fas").addClass("far").css("color", "#005B62");
-            }
         } 
     }) 
 });
