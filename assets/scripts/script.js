@@ -28,12 +28,11 @@ let bestTimeCovid = [Infinity, Infinity, Infinity, Infinity];
 
 function enableDarkMode() {
     if($(".dark-mode-btn").prop("checked")) {
-        $("body").attr("id", "dark-mode");
+        $("body").addClass("dark-mode");
     } else {
-        $("body").removeAttr("id");    
+        $("body").removeClass("dark-mode");    
     }
 }
-enableDarkMode();
 
 /*themes*/
 function generateTheme() {
