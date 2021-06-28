@@ -12,7 +12,7 @@ h1 {
     font-weight: 500;
 }
 
-.bottom-area span {
+span {
     font-size: x-large;
 }
 
@@ -45,7 +45,7 @@ h1 {
     border: solid #71D9D8
 }
 
-.bottom-area, .dropdown-header, h1, .fa-ellipsis-h {
+.bottom-area, .dropdown-header, h1, .fa-ellipsis-h, .timer {
     color: #005B62;
 }
 
@@ -163,6 +163,10 @@ footer {
 
 /*small screen size media queries*/
 @media only screen and (max-width: 772px) {
+    header {
+        border-bottom: 2px solid #fff;
+    }
+    
     .game-container {
         min-width: 100%;
         min-height: 100vh;
@@ -172,6 +176,8 @@ footer {
 
     .game-area, body {
         background-color: #4ED0CE;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 14px;
     }
 
     .dark-mode, .dark-mode .game-area {
@@ -189,19 +195,29 @@ footer {
         font-weight: 600;
     } 
 
-    .game-button {
-        padding: 15px;
-        margin-top: 65px;
-    }
-
-    .hamburger-menu {
-        margin-top: -80px;
-    }
-
     #hamburger-dropdown {
-
+        margin-top: -80px;
         padding-right: 15px;
         border: none;
+    }
+
+    .game-button {
+        padding: 15px;
+        margin-top: -45px;
+    }
+
+    .timer {
+        width: auto;
+        margin-top: -46px;
+    }
+
+    .bottom-area, span:not(.current-level span) {
+        font-weight: 600;
+        font-size: small;
+    }
+
+    .current-level span {
+        font-weight: 600;
     }
 }
 
