@@ -4,6 +4,7 @@
 /*fonts*/
 body {
     font-family: Spinnaker, sans-serif;
+    background-color: #d9dcd6;
 }
 
 h1 {
@@ -17,7 +18,7 @@ h1 {
 
 /*colors*/
 .game-container {
-    background-color: #4ED0CE;
+    background-color: #4ED0CE; 
 }
 
 .full-menu {
@@ -41,7 +42,7 @@ h1 {
 
 .card-div {
     background-color: #005B62;
-    border: solid #4ED0CE;
+    border: solid #71D9D8
 }
 
 .bottom-area, .dropdown-header, h1, .fa-ellipsis-h {
@@ -56,8 +57,7 @@ h1 {
 
 /*game container*/
 .game-container {
-    width: 70vw;
-    height: fit-content;
+    height: 100vh;
     margin-bottom: 5vh;
 }
 
@@ -89,17 +89,29 @@ li > .fas {
 
 /*game area*/
 .game-area {
-    min-height: 55vh;
+    max-height: 80vh;
     height: fit-content;
+    min-width: 90vw;
     margin-top: 15px;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
 }
 
 /*sizing memory bricks*/
 .card-div {
-    height: 29vh;
+    height: auto;
     border-width: 3px;
+    padding: 0;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -108,6 +120,7 @@ li > .fas {
     padding-top: 1vh;
 }
 
+
 .current-level > p {
     margin-bottom: 0;
 }
@@ -115,6 +128,39 @@ li > .fas {
 /*footer*/
 footer {
     padding-top: 15px;
+}
+
+/* Missing bootstrap classes */
+.row-cols-8>* {
+    -ms-flex: 0 0 12.5%;
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+}
+.row-col-10>* {
+    -ms-flex: 0 0 10%;
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+
+@media (min-width: 768px) {
+    .row-cols-md-8>* {
+        -ms-flex: 0 0 12.5%;
+        flex: 0 0 12.5%;
+        max-width: 12.5%;
+    }
+
+    .row-cols-md-10>* {
+        -ms-flex: 0 0 10%;
+        flex: 0 0 10%;
+        max-width: 10%;
+        max-height: 10%;
+    }
+
+    .row-cols-md-12>* {
+        -ms-flex: 0 0 8.3333%;
+        flex: 0 0 8.3333%;
+        max-width: 8.3333%;
+    }
 }
 
 /*small screen size media queries*/
@@ -135,11 +181,15 @@ footer {
     }
 
     .card-div {
-        max-height: 12.5vh;
+        border-color: #4ED0CE;
     }
 }
 
 /*dark mode styling*/
+.dark-mode {
+    background-color: #13383E;
+}
+
 .dark-mode .game-container{
     background-color: hsl(179, 58%,26%);
 }
@@ -166,7 +216,7 @@ footer {
 }
 
 .dark-mode .card-div {
-    background-color: rgb(159, 239, 244);
+    background-color: hsl(184, 79%, 79%);
     border: solid hsl(179, 58%,26%);
 }
 
