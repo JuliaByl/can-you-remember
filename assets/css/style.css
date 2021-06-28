@@ -89,10 +89,9 @@ li > .fas {
 
 /*game area*/
 .game-area {
-    max-height: 80vh;
     height: fit-content;
     min-width: 90vw;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     padding: 4px;
@@ -116,12 +115,11 @@ img {
 }
 
 .bottom-area {
-    padding-bottom: 1vh;
-    padding-top: 1vh;
+    padding-bottom: 2px;
+    padding-top: 5px;
 }
 
-
-.current-level > p {
+.bottom-area div p {
     margin-bottom: 0;
 }
 
