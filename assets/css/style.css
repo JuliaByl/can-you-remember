@@ -181,6 +181,10 @@ footer {
     .card-div {
         border-color: #4ED0CE;
     }
+
+    h1 {
+        font-size: x-large;
+    }
 }
 
 /*dark mode styling*/

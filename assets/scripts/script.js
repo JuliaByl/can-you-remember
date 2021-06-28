@@ -382,6 +382,7 @@ function interactiveStyling() {
     if ($(window).width() <= 772) {
         $('.hamburger-menu').append($('.game-button'));
         $('#big-menu').remove();
+        $('.fa-brain').remove();
     } else {
         $('.hamburger-menu')[0].remove();
     }
