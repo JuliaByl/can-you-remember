@@ -380,8 +380,9 @@ $(".dark-mode-btn").click(function() {
 /*interactive styling*/
 function interactiveStyling() {
     if ($(window).width() <= 772) {
-        $('.hamburger-menu').append($('.game-button'));
-        $('#big-menu').remove();
+        $("header").append($(".hamburger-menu"));
+        $("header").append($(".game-button"));
+        $('.full-menu').remove();
         $('.fa-brain').remove();
     } else {
         $('.hamburger-menu')[0].remove();
