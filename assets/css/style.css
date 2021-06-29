@@ -4,6 +4,7 @@
 /*fonts*/
 body {
     font-family: Spinnaker, sans-serif;
+    background-color: #d9dcd6;
 }
 
 h1 {
@@ -11,13 +12,13 @@ h1 {
     font-weight: 500;
 }
 
-.bottom-area span {
+span {
     font-size: x-large;
 }
 
 /*colors*/
 .game-container {
-    background-color: #4ED0CE;
+    background-color: #4ED0CE; 
 }
 
 .full-menu {
@@ -34,6 +35,14 @@ h1 {
     background-color: #fff;
 }
 
+.btn-dark {
+    background-color: #005B62;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+}
+
 .game-area {
     background-color: rgba(255, 255, 255, 0.2);
     color: #005B62;
@@ -41,10 +50,10 @@ h1 {
 
 .card-div {
     background-color: #005B62;
-    border: solid #4ED0CE;
+    border: solid #71D9D8
 }
 
-.bottom-area, .dropdown-header, h1, .fa-ellipsis-h {
+.bottom-area, .dropdown-header, h1, .fa-ellipsis-h, .timer {
     color: #005B62;
 }
 
@@ -56,8 +65,7 @@ h1 {
 
 /*game container*/
 .game-container {
-    width: 70vw;
-    height: fit-content;
+    height: 100vh;
     margin-bottom: 5vh;
 }
 
@@ -74,14 +82,8 @@ li > .fas {
     margin-right: 5px;
 }
 
-.demon-mode {
-    font-size: x-small;
-    width: 85px;
-    height: 50px;
-}
-
-/*interactive styling for demon mode- and dark mode-button, incl. colors*/
-.btn-danger > .custom-control-label::after, 
+/*interactive styling for dark mode-button, incl. colors*/
+.btn-dark > .custom-control-label::after, 
 .dropdown-item > .custom-control-label::after,
 .custom-control-input:checked~.custom-control-label::before {
     background-color: #54B9CA;
@@ -89,27 +91,52 @@ li > .fas {
 
 /*game area*/
 .game-area {
-    min-height: 55vh;
     height: fit-content;
-    margin-top: 15px;
-    margin-left: 1px;
-    margin-right: 1px;
+    min-width: 90vw;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
 }
 
 /*sizing memory bricks*/
 .card-div {
-    height: 29vh;
+    height: auto;
     border-width: 3px;
+    padding: 0;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
 .bottom-area {
-    padding-bottom: 1vh;
-    padding-top: 1vh;
+    padding-bottom: 2px;
+    padding-top: 5px;
 }
 
-.current-level > p {
+.bottom-area div p {
     margin-bottom: 0;
+}
+
+/*welcome area*/
+.welcome-area {
+    min-height: 60vh;
+}
+
+.welcome-area div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    margin-top: 30px;
 }
 
 /*footer*/
@@ -117,8 +144,45 @@ footer {
     padding-top: 15px;
 }
 
+/* Missing bootstrap classes */
+.row-cols-8>* {
+    -ms-flex: 0 0 12.5%;
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+}
+.row-col-10>* {
+    -ms-flex: 0 0 10%;
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+
+@media (min-width: 768px) {
+    .row-cols-md-8>* {
+        -ms-flex: 0 0 12.5%;
+        flex: 0 0 12.5%;
+        max-width: 12.5%;
+    }
+
+    .row-cols-md-10>* {
+        -ms-flex: 0 0 10%;
+        flex: 0 0 10%;
+        max-width: 10%;
+        max-height: 10%;
+    }
+
+    .row-cols-md-12>* {
+        -ms-flex: 0 0 8.3333%;
+        flex: 0 0 8.3333%;
+        max-width: 8.3333%;
+    }
+}
+
 /*small screen size media queries*/
-@media only screen and (max-width: 772px) {
+@media only screen and (max-width: 576px) {
+    header {
+        border-bottom: 2px solid #fff;
+    }
+    
     .game-container {
         min-width: 100%;
         min-height: 100vh;
@@ -128,6 +192,8 @@ footer {
 
     .game-area, body {
         background-color: #4ED0CE;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 14px;
     }
 
     .dark-mode, .dark-mode .game-area {
@@ -135,11 +201,47 @@ footer {
     }
 
     .card-div {
-        max-height: 12.5vh;
+        border-color: #4ED0CE;
+    }
+
+    h1 {
+        font-size: x-large;
+        padding: 15px;
+        margin-top: 0;
+        font-weight: 600;
+    } 
+
+    #hamburger-dropdown {
+        margin-top: -80px;
+        padding-right: 15px;
+        border: none;
+    }
+
+    .game-button {
+        padding: 15px;
+        margin-top: -45px;
+    }
+
+    .timer {
+        width: auto;
+        margin-top: -46px;
+    }
+
+    .bottom-area, span:not(.current-level span) {
+        font-weight: 600;
+        font-size: small;
+    }
+
+    .current-level span {
+        font-weight: 600;
     }
 }
 
 /*dark mode styling*/
+.dark-mode {
+    background-color: #13383E;
+}
+
 .dark-mode .game-container{
     background-color: hsl(179, 58%,26%);
 }
@@ -161,15 +263,23 @@ footer {
     background-color: #fff;
 }
 
+.dark-mode .btn-dark {
+    background-color: #000;
+}
+
+.dark-mode .btn-dark:hover {
+    background-color: #005B62;
+}
+
 .dark-mode .game-area, .dark-mode h1, .dark-mode .fa-ellipsis-h {
     color: hsl(184, 80%, 79%); 
 }
 
 .dark-mode .card-div {
-    background-color: rgb(159, 239, 244);
+    background-color: hsl(184, 79%, 79%);
     border: solid hsl(179, 58%,26%);
 }
 
-.dark-mode .bottom-area, .dark-mode .dropdown-header{
+.dark-mode .bottom-area, .dark-mode .dropdown-header, .dark-mode .timer{
     color: hsl(184, 80%, 79%);
 }

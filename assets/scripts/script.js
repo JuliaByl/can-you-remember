@@ -12,7 +12,7 @@ let maxLevel = 1;
 let catsMaxLevel = 1;
 let plantsMaxLevel = 1;
 let covidMaxLevel = 1;
-let theme;
+let theme = "cats";
 let nextArrow = $(".fa-arrow-alt-circle-right");
 let prevArrow = $(".fa-arrow-alt-circle-left");
 let timerStart = false;
@@ -35,9 +35,30 @@ function enableDarkMode() {
 }
 
 /*themes*/
+function changeColumns() {
+    switch (currentLevel) {
+        case 1:
+            gameArea.attr("class", "row row-cols-md-5 row-cols-5 game-area");  
+            break;
+        case 2:
+            gameArea.attr("class", "row row-cols-md-8 row-cols-4 game-area");  
+            break;
+        case 3:
+            gameArea.attr("class", "row row-cols-md-10 row-cols-5 game-area"); 
+            break;
+        case 4:
+            gameArea.attr("class", "row row-cols-md-10 row-cols-6 game-area");
+            break;
+        default:
+            break;
+    }
+}
+
 function generateTheme() {
     let imgCounter = [];
+    time = Infinity;
     gameArea.empty();
+    changeColumns();
     stopTimer();
     resetTimer();
     updateBestTime();
@@ -50,17 +71,17 @@ function generateTheme() {
         imgRandom = Math.floor(Math.random() * pairs[currentLevel - 1]) + 1;
         if (imgCounter[imgRandom - 1] >= 1) {
             gameArea.append(
-                `<div class="card-div ">
+                `<div class="card-div col">
                     <img class ="card-img ${theme}" src="images/${theme}/${theme}-${imgRandom}.jpg"> 
                     </div>`
             );
-            $("img").hide();
             /*limit the amount of the same image to 2*/
             imgCounter[imgRandom - 1] -= 1;
         } else {
             i--;
         }
     }
+    $("img").toggleClass("hidden");
 }
 
 /*start game functions*/
@@ -135,15 +156,17 @@ function matchCard() {
 }
 
 function hideCards() {
-    $("#img-1").children("img").hide();
-    $("#img-2").children("img").hide();
-    $("#img-1").attr("id", "");
-    $("#img-2").attr("id", "");
+    let img1 = $("#img-1");
+    let img2 = $("#img-2");
+    img1.addClass("hidden");
+    img2.addClass("hidden");
+    img1.attr("id", "");
+    img2.attr("id", "");
 }
 
 function checkCards() {
-    let img1 = $("#img-1").children().attr("src");
-    let img2 = $("#img-2").children().attr("src");
+    let img1 = $("#img-1").attr("src");
+    let img2 = $("#img-2").attr("src");
 
     if (img1 === img2) {
         /*cards match*/
@@ -274,16 +297,16 @@ function previousLevel() {
 /*event listeners*/
 /*cardClick should only work when the function is called after choosing a theme and clicking GameButton*/
 function cardClick() {
-    $(".card-div").click(function () {
-        let cardImg = $(this).children();
+    $(".card-img").click(function () {
+        let cardImg = $(this);
 
-        if (cardImg.attr("style") === "display: none;") {
+        if (cardImg.hasClass("hidden")) {
             if ($("#img-1").length === 0) {
-                cardImg.show();
-                $(this).attr("id", "img-1");
+                cardImg.removeClass("hidden");
+                cardImg.attr("id", "img-1");
             } else if ($("#img-2").length === 0) {
-                cardImg.show();
-                $(this).attr("id", "img-2");
+                cardImg.removeClass("hidden");
+                cardImg.attr("id", "img-2");
                 checkCards();
             }
         }
@@ -356,9 +379,12 @@ $(".dark-mode-btn").click(function() {
 
 /*interactive styling*/
 function interactiveStyling() {
-    if ($(window).width() <= 772) {
-        $('.hamburger-menu').append($('.game-button'));
-        $('#big-menu').remove();
+    if ($(window).width() <= 576) {
+        $("header").append($(".hamburger-menu"));
+        $("header").append($(".game-button"));
+        $("header").append($(".timer"));
+        $('.full-menu').remove();
+        $('.fa-brain').remove();
     } else {
         $('.hamburger-menu')[0].remove();
     }
