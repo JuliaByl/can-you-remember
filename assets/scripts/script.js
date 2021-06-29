@@ -383,7 +383,29 @@ prevArrow.click(function () {
 /*reset all levels and highscores*/
 $(".reset").click(function () {
     resetTimer();
-    gameArea.empty();
+    gameArea.html(`<div class="col-12">
+    <h2>Welcome!</h2>
+</div>
+<div class="col-md-5 col-sm-12">
+    <p>
+        This game is a classic memory game, created as my second milestone project for Code Institute.
+        In these times (aka. 2021 for anyone playing this game post-pandemic) many people struggle with many new issues.
+        While I can't stop everything that is happening at the moment, I can at least try to provide some educational and heartwarming 
+        content in the form of this game.
+    </p>
+</div>   
+<div class="col-md-5 col-sm-12">
+    <p>
+        There are 3 different themes to choose from. I urge everyone to try the covid-theme, which 
+        contains important intructional images on how to keep yourself and others safe, as well as some tips on how to keep sane when locked 
+        up at home. The two last themes are cats and plants, (almost) everyone's two favourite things. 
+        Enjoy!
+    </p>
+</div>
+<div class="col-md-6 col-sm-12">
+    <p>Take a moment to look through the instructions before playing:</p>
+    <button class="btn btn-outline-light game-rules">Game Rules</button>
+</div>`);
     maxLevel = 1;
     currentLevel = 1;
     catsMaxLevel = 1;
