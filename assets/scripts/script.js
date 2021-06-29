@@ -243,12 +243,12 @@ function incrementMaxLevel() {
 
 function colorArrows() {
     if (currentLevel === 1) {
-        prevArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        prevArrow.removeClass("fas").addClass("far").css("color", "");
     } else {
         prevArrow.removeClass("far").addClass("fas").css("color", "#28a745");
     }
     if (currentLevel === maxLevel) {
-        nextArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        nextArrow.removeClass("fas").addClass("far").css("color", "");
     } else {
         nextArrow.removeClass("far").addClass("fas").css("color", "#28a745");
     }
@@ -299,7 +299,7 @@ function openGameRules() {
         <div class="col-12" >
             <h2>Game Rules</h2>
         </div>
-        <div class = "col-6">
+        <div class = "col-md-6 col-sm-12">
             <ol class="text-left"> 
                 <li>To start off the game, you will first need to pick a theme.</li>
                 <li>After a theme is chosen you can click the "Start Game" button and the game will start.</li>
