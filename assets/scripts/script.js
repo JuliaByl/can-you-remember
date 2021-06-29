@@ -298,7 +298,8 @@ function previousLevel() {
 }
 
 function openGameRules() {
-    $(".game-area").html(`
+    gameArea.attr("class", "row text-center welcome-area game-area");
+    gameArea.html(`
         <div class="col-12" >
             <h2>Game Rules</h2>
         </div>
