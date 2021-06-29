@@ -249,7 +249,7 @@ footer {
         margin-top: -46px;
     }
 
-    .bottom-area, span:not(.current-level span) {
+    .bottom-area, span:not(#level) {
         font-weight: 600;
         font-size: small;
     }
