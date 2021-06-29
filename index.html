@@ -9,13 +9,13 @@
     <title>Can You Remember?</title>
 </head>
 <body>
-<!---------------header--------------->
+<!--header-->
     <header>
         <div class="text-sm-center">
             <h1><i class="fas fa-brain"></i> Can You Remember?</h1>
         </div>
     </header>
-<!---------------game container--------------->
+<!--game container-->
     <div class="container-fluid game-container">
         <!--big and medium screen menu-->
         <nav class="row">
@@ -29,18 +29,18 @@
                         <ul class="dropdown-menu" aria-labelledby="customize-dropdown">  
                             <li>
                                 <ul> 
-                                    <li type="button" class="dropdown-item themes cats"><i class="fas fa-cat"></i> Cats</li>
-                                    <li type="button" class="dropdown-item themes plants"><i class="fas fa-seedling"></i> Plants</li>
-                                    <li type="button" class="dropdown-item themes covid"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
+                                    <li class="dropdown-item themes cats"><i class="fas fa-cat"></i> Cats</li>
+                                    <li class="dropdown-item themes plants"><i class="fas fa-seedling"></i> Plants</li>
+                                    <li class="dropdown-item themes covid"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
                                 </ul>     
                             </li>
                         </ul>
                     </div>
                     <button class="btn btn-outline-light reset">Reset</button>
-                    <button class="btn btn-dark d-inline float-right custom-control custom-switch" type="button">
+                    <div class="btn btn-dark d-inline float-right custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input dark-mode-btn" id="dark-switch">
                         <label for="dark-switch" class="custom-control-label">Dark Mode</label>
-                    </button>
+                    </div>
                     <div class="d-sm-inline game-button" id="start-game">
                         <button class="btn btn-success btn-lg" type="button">Start Game</button>
                     </div>   
@@ -51,17 +51,17 @@
                         <i class="fas fa-ellipsis-h fa-2x"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="hamburger-dropdown">
-                        <li class="dropdown-item game-rules" type="button">Game Rules</li> 
+                        <li class="dropdown-item game-rules">Game Rules</li> 
                         <li class="dropdown-item reset">Reset</li>
                         <li>
                             <h6 class="dropdown-header">Themes</h6>
                             <ul> 
-                                <li type="button" class="dropdown-item themes cats"><i class="fas fa-cat"></i> Cats</li>
-                                <li type="button" class="dropdown-item themes plants"><i class="fas fa-seedling"></i> Plants</li>
-                                <li type="button" class="dropdown-item themes covid"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
+                                <li class="dropdown-item themes cats"><i class="fas fa-cat"></i> Cats</li>
+                                <li class="dropdown-item themes plants"><i class="fas fa-seedling"></i> Plants</li>
+                                <li class="dropdown-item themes covid"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
                             </ul>     
                         </li>
-                        <li class="btn btn-dark custom-control custom-switch" type="button">
+                        <li class="btn btn-dark custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input dark-mode-btn" id="dark-switch-sm">
                             <label for="dark-switch-sm" class="custom-control-label">Dark Mode</label>
                         </li>   
@@ -84,7 +84,7 @@
             <div class="col-md-5 col-sm-12">
                 <p>
                     There are 3 different themes to choose from. I urge everyone to try the covid-theme, which 
-                    contains important intructional images on how to keep yourself and others safe, as well as some tips on how to keep sane when locked 
+                    contains important instructional images on how to keep yourself and others safe, as well as some tips on how to keep sane when locked 
                     up at home. The two last themes are cats and plants, (almost) everyone's two favourite things. 
                     Enjoy!
                 </p>
@@ -123,8 +123,7 @@
             </div>
         </div>
     </div>
-
-<!---------------footer--------------->
+<!--footer-->
     <footer>
         <div class="container-fluid">
             <div class="row">
@@ -136,10 +135,10 @@
                 </div>
                 <div class="col-6 social">
                     <p>
-                        <a href="https://www.linkedin.com/in/julia-bylund-12a027201/" target="_blank">
+                        <a href="https://www.linkedin.com/in/julia-bylund-12a027201/" target="_blank" aria-label="link to linkedin">
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
-                        <a href="https://github.com/JuliaByl" target="_blank">
+                        <a href="https://github.com/JuliaByl" target="_blank" aria-label="link to github">
                             <i class="fab fa-github-square fa-2x"></i>
                         </a>
                         julia.bylund.97@gmail.com
@@ -149,7 +148,7 @@
         </div>
     </footer>
 
-<!---------------scripts--------------->
+<!--scripts-->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/780fb9bfea.js" crossorigin="anonymous"></script>

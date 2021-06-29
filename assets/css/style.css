@@ -65,7 +65,7 @@ h1 {
 
 /*game container*/
 .game-container {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .full-menu {
@@ -152,6 +152,7 @@ footer {
     padding-top: 15px;
     border-top: 2px solid #fff;
     font-size: small;
+    height: 70px;
 }
 
 .social p a {
@@ -203,7 +204,6 @@ footer {
     
     .game-container {
         min-width: 100%;
-        min-height: 100vh;
         max-height: 100%; 
         margin: 0;
     }
@@ -249,7 +249,7 @@ footer {
         margin-top: -46px;
     }
 
-    .bottom-area, span:not(.current-level span) {
+    .bottom-area, span:not(#level) {
         font-weight: 600;
         font-size: small;
     }

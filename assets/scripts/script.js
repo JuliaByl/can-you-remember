@@ -1,6 +1,6 @@
 $(document).ready(function () {
     interactiveStyling();
-})
+});
 
 /*variables*/
 let gameButton = $(".game-button");
@@ -68,7 +68,7 @@ function generateTheme() {
     }
     /*generate 2 pairs of 5 different images*/
     for (let i = 0; i < pairs[currentLevel - 1] * 2; i++) {
-        imgRandom = Math.floor(Math.random() * pairs[currentLevel - 1]) + 1;
+        let imgRandom = Math.floor(Math.random() * pairs[currentLevel - 1]) + 1;
         if (imgCounter[imgRandom - 1] >= 1) {
             gameArea.append(
                 `<div class="card-div col">
@@ -118,7 +118,7 @@ function updateTimer() {
 
         timer.html(convertTime());
         setTimeout(function () {
-            updateTimer()
+            updateTimer();
         }, 1);
     }
 }
@@ -174,7 +174,7 @@ function checkCards() {
     } else {
         /*cards don't match*/
         setTimeout(function () {
-            hideCards()
+            hideCards();
         }, 1000);
     }
 }
@@ -283,6 +283,9 @@ function nextLevel() {
         generateTheme();
         colorArrows();
         generateStartButton();
+        if (currentLevel === 4 && maxLevel > 4) {
+            nextArrow.removeClass("far").addClass("fas").css("color", "#dc3545");
+        }
     }
 }
 /*TODO: clean up code and stop game from starting over when changing theme*/
@@ -295,7 +298,8 @@ function previousLevel() {
 }
 
 function openGameRules() {
-    $(".game-area").html(`
+    gameArea.attr("class", "row text-center welcome-area game-area");
+    gameArea.html(`
         <div class="col-12" >
             <h2>Game Rules</h2>
         </div>
@@ -332,7 +336,7 @@ function cardClick() {
                 checkCards();
             }
         }
-    })
+    });
 }
 
 /*choosing a theme*/
@@ -340,7 +344,7 @@ $(".themes").click(function () {
     generateStartButton();
     currentLevel = 1;
     $("#level").html(currentLevel);
-    updateMaxLevel()
+    updateMaxLevel();
     /*reset arrows*/
 
     if ($(this).html() == $(".cats").html()) {
@@ -364,7 +368,7 @@ $(".themes").click(function () {
             restartClick();
             cardClick();
         }
-    })
+    });
 });
 
 /*navigating through levels*/
@@ -372,18 +376,41 @@ nextArrow.click(function () {
     if (maxLevel > currentLevel) {
         nextLevel();
     }
-})
+});
 
 prevArrow.click(function () {
     if (currentLevel > 1) {
         previousLevel();
     }
-})
+});
 
 /*reset all levels and highscores*/
 $(".reset").click(function () {
     resetTimer();
-    gameArea.empty();
+    gameArea.attr("class", "row text-center welcome-area game-area");
+    gameArea.html(`<div class="col-12">
+    <h2>Welcome!</h2>
+</div>
+<div class="col-md-5 col-sm-12">
+    <p>
+        This game is a classic memory game, created as my second milestone project for Code Institute.
+        In these times (aka. 2021 for anyone playing this game post-pandemic) many people struggle with many new issues.
+        While I can't stop everything that is happening at the moment, I can at least try to provide some educational and heartwarming 
+        content in the form of this game.
+    </p>
+</div>   
+<div class="col-md-5 col-sm-12">
+    <p>
+        There are 3 different themes to choose from. I urge everyone to try the covid-theme, which 
+        contains important instructional images on how to keep yourself and others safe, as well as some tips on how to keep sane when locked 
+        up at home. The two last themes are cats and plants, (almost) everyone's two favourite things. 
+        Enjoy!
+    </p>
+</div>
+<div class="col-md-6 col-sm-12">
+    <p>Take a moment to look through the instructions before playing:</p>
+    <button class="btn btn-outline-light game-rules">Game Rules</button>
+</div>`);
     maxLevel = 1;
     currentLevel = 1;
     catsMaxLevel = 1;
@@ -392,17 +419,17 @@ $(".reset").click(function () {
     $("#level").html("1");
     bestTimeHtml.html("00:00:00");
     colorArrows();
-})
+});
 
 $(".game-rules").click(function() {
     gameArea.empty();
     openGameRules();
-})
+});
 
 /*enables/disables dark mode styling*/
 $(".dark-mode-btn").click(function() {
     enableDarkMode();
-})
+});
 
 /*interactive styling*/
 function interactiveStyling() {
