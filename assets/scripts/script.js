@@ -387,6 +387,7 @@ prevArrow.click(function () {
 /*reset all levels and highscores*/
 $(".reset").click(function () {
     resetTimer();
+    gameArea.attr("class", "row text-center welcome-area game-area");
     gameArea.html(`<div class="col-12">
     <h2>Welcome!</h2>
 </div>
