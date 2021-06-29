@@ -283,6 +283,9 @@ function nextLevel() {
         generateTheme();
         colorArrows();
         generateStartButton();
+        if (currentLevel === 4 && maxLevel > 4) {
+            nextArrow.removeClass("far").addClass("fas").css("color", "#dc3545");
+        }
     }
 }
 /*TODO: clean up code and stop game from starting over when changing theme*/
