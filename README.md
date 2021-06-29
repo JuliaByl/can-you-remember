@@ -69,6 +69,8 @@ To see complete wireframes, click [**HERE**](images/wireframes/complete-wirefram
 
 ### Built With
 
+* HTML5
+* JavaScript
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 
@@ -99,12 +101,38 @@ As a user I want to...
 ### Bigger changes to the website
 * I decided to remove the "mix all themes" - theme as it doesn't seem essential for what I'm trying to do. I want to be able to focus more on all the other aspects of the game.
 
+* In the end there was no time for Demon Mode feature, so I moved over Dark Theme button to previous Demon Mode - button.
+
 ### Testing
 
-#### Memory pictures loading correctly check
 
-![Image from Gyazo](https://i.gyazo.com/f42ee6422e28d5bedca269a813e951f9.gif)
+#### Testing User Stories
 
+1. As a user I want to feel motivated to stay in the game - by getting challenged and having multiple choices to pick between
+
+	1. As users clear levels, they unlock newer, more difficult levels
+	2. Clear times are saved, and the best time for a level is displayed, allowing users to challenge themselves to be faster
+	3. At any time, users can decide to change theme to experience the game again with a different aesthetic
+
+2. As a user I want to be able to stay in the game for longer without straining my eyes - by having the possibility to choose dark mode
+
+	1. A dark mode button is visible and clearly distinct upon first entering the site, and is present at all times
+
+3. As a user I want to learn something - by getting a useful theme focused on learning about current events
+
+	1. One of the themes addresses the currently ongoing COVID-19 pandemic and teaches users how to handle the current situation.
+
+4. As a user I want to navigate easily throughout the game - by having everything easily accessible and instructions to not cause confusion
+
+	1. Upon visiting the site, the user is greeted with a welcome page that gives a brief summary of the site's purpose, and links to the game rules.
+	2. The game rules clearly explain how to proceed and play the game without causing any confusion.
+
+#### Further Testing
+
+
+-   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 <!-- CONTRIBUTING -->
 ## Contributing
