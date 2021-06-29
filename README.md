@@ -88,8 +88,6 @@ As a user I want to...
 * ...learn something - by getting a useful theme focused on learning about current events
 * ...navigate easily throughout the game - by having everything easily accessible and instructions to not cause confusion
 
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -105,6 +103,10 @@ As a user I want to...
 
 ### Testing
 
+* [W3C Markup Validator](https://validator.w3.org/#validate_by_input) - [Results](https://github.com/JuliaByl/can-you-remember/blob/master/images/validation/html-validation.png)
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/JuliaByl/can-you-remember/blob/master/images/validation/css-validation.png)
+* [JSHint Javascript Linter](https://jshint.com/) - [Results](https://github.com/JuliaByl/can-you-remember/blob/master/images/validation/javascript-validation.png)
+* [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) - [Results](https://github.com/JuliaByl/can-you-remember/blob/master/images/validation/accessibility-validation.png)
 
 #### Testing User Stories
 
