@@ -177,6 +177,7 @@ Project Link: [Can You Remember?](https://github.com/JuliaByl/can-you-remember)
 * [Stack Overflow](https://stackoverflow.com/)
 * [ColorSpace](https://mycolor.space/)
 * [Gyazo for screencasts](https://gyazo.com/)
+* [W3Schools](https://www.w3schools.com/)
 
 ### Pexels acknowledgements
 * plants-1 [Photo by Richa Sharma from Pexels](https://www.pexels.com/photo/morning-dew-on-leaf-of-tinospora-cordifolia-plant-4439974/)
