@@ -38,7 +38,7 @@ function enableDarkMode() {
 function changeColumns() {
     switch (currentLevel) {
         case 1:
-            gameArea.attr("class", "row row-cols-md-5 row-cols-5 game-area");  
+            gameArea.attr("class", "row row-cols-md-5 row-cols-5 game-area half-width");  
             break;
         case 2:
             gameArea.attr("class", "row row-cols-md-8 row-cols-4 game-area");  
