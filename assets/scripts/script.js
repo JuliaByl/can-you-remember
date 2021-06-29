@@ -1,6 +1,6 @@
 $(document).ready(function () {
     interactiveStyling();
-})
+});
 
 /*variables*/
 let gameButton = $(".game-button");
@@ -68,7 +68,7 @@ function generateTheme() {
     }
     /*generate 2 pairs of 5 different images*/
     for (let i = 0; i < pairs[currentLevel - 1] * 2; i++) {
-        imgRandom = Math.floor(Math.random() * pairs[currentLevel - 1]) + 1;
+        let imgRandom = Math.floor(Math.random() * pairs[currentLevel - 1]) + 1;
         if (imgCounter[imgRandom - 1] >= 1) {
             gameArea.append(
                 `<div class="card-div col">
@@ -118,7 +118,7 @@ function updateTimer() {
 
         timer.html(convertTime());
         setTimeout(function () {
-            updateTimer()
+            updateTimer();
         }, 1);
     }
 }
@@ -174,7 +174,7 @@ function checkCards() {
     } else {
         /*cards don't match*/
         setTimeout(function () {
-            hideCards()
+            hideCards();
         }, 1000);
     }
 }
@@ -336,7 +336,7 @@ function cardClick() {
                 checkCards();
             }
         }
-    })
+    });
 }
 
 /*choosing a theme*/
@@ -344,7 +344,7 @@ $(".themes").click(function () {
     generateStartButton();
     currentLevel = 1;
     $("#level").html(currentLevel);
-    updateMaxLevel()
+    updateMaxLevel();
     /*reset arrows*/
 
     if ($(this).html() == $(".cats").html()) {
@@ -368,7 +368,7 @@ $(".themes").click(function () {
             restartClick();
             cardClick();
         }
-    })
+    });
 });
 
 /*navigating through levels*/
@@ -376,13 +376,13 @@ nextArrow.click(function () {
     if (maxLevel > currentLevel) {
         nextLevel();
     }
-})
+});
 
 prevArrow.click(function () {
     if (currentLevel > 1) {
         previousLevel();
     }
-})
+});
 
 /*reset all levels and highscores*/
 $(".reset").click(function () {
@@ -419,17 +419,17 @@ $(".reset").click(function () {
     $("#level").html("1");
     bestTimeHtml.html("00:00:00");
     colorArrows();
-})
+});
 
 $(".game-rules").click(function() {
     gameArea.empty();
     openGameRules();
-})
+});
 
 /*enables/disables dark mode styling*/
 $(".dark-mode-btn").click(function() {
     enableDarkMode();
-})
+});
 
 /*interactive styling*/
 function interactiveStyling() {
