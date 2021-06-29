@@ -35,6 +35,14 @@ span {
     background-color: #fff;
 }
 
+.btn-dark {
+    background-color: #005B62;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+}
+
 .game-area {
     background-color: rgba(255, 255, 255, 0.2);
     color: #005B62;
@@ -74,14 +82,8 @@ li > .fas {
     margin-right: 5px;
 }
 
-.demon-mode {
-    font-size: x-small;
-    width: 85px;
-    height: 50px;
-}
-
-/*interactive styling for demon mode- and dark mode-button, incl. colors*/
-.btn-danger > .custom-control-label::after, 
+/*interactive styling for dark mode-button, incl. colors*/
+.btn-dark > .custom-control-label::after, 
 .dropdown-item > .custom-control-label::after,
 .custom-control-input:checked~.custom-control-label::before {
     background-color: #54B9CA;
@@ -123,6 +125,20 @@ img {
     margin-bottom: 0;
 }
 
+/*welcome area*/
+.welcome-area {
+    min-height: 60vh;
+}
+
+.welcome-area div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
 /*footer*/
 footer {
     padding-top: 15px;
@@ -162,7 +178,7 @@ footer {
 }
 
 /*small screen size media queries*/
-@media only screen and (max-width: 772px) {
+@media only screen and (max-width: 576px) {
     header {
         border-bottom: 2px solid #fff;
     }
@@ -247,6 +263,14 @@ footer {
     background-color: #fff;
 }
 
+.dark-mode .btn-dark {
+    background-color: #000;
+}
+
+.dark-mode .btn-dark:hover {
+    background-color: #005B62;
+}
+
 .dark-mode .game-area, .dark-mode h1, .dark-mode .fa-ellipsis-h {
     color: hsl(184, 80%, 79%); 
 }
@@ -256,6 +280,6 @@ footer {
     border: solid hsl(179, 58%,26%);
 }
 
-.dark-mode .bottom-area, .dark-mode .dropdown-header{
+.dark-mode .bottom-area, .dark-mode .dropdown-header, .dark-mode .timer{
     color: hsl(184, 80%, 79%);
 }

@@ -24,15 +24,10 @@
                     <button class="btn btn-outline-light">Game Rules</button>
                     <div class="dropdown d-inline">
                         <button id="customize-dropdown" class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Customize
+                            Themes
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="customize-dropdown">
-                            <li class="dropdown-item custom-control custom-switch" type="button">
-                                <input type="checkbox" class="custom-control-input dark-mode-btn" id="dark-switch">
-                                <label for="dark-switch" class="custom-control-label">Dark Mode</label>
-                            </li>   
+                        <ul class="dropdown-menu" aria-labelledby="customize-dropdown">  
                             <li>
-                                <h6 class="dropdown-header">Themes</h6>
                                 <ul> 
                                     <li type="button" class="dropdown-item themes cats"><i class="fas fa-cat"></i> Cats</li>
                                     <li type="button" class="dropdown-item themes plants"><i class="fas fa-seedling"></i> Plants</li>
@@ -42,11 +37,9 @@
                         </ul>
                     </div>
                     <button class="btn btn-outline-light reset">Reset</button>
-                    <button class="btn btn-danger d-inline float-right custom-control custom-switch demon-mode" type="button">
-                        <input type="checkbox" class="custom-control-input" id="demon-switch">
-                        <label for="demon-switch" class="custom-control-label">
-                            <strong>DEMON MODE</strong>
-                        </label>
+                    <button class="btn btn-dark d-inline float-right custom-control custom-switch" type="button">
+                        <input type="checkbox" class="custom-control-input dark-mode-btn" id="dark-switch">
+                        <label for="dark-switch" class="custom-control-label">Dark Mode</label>
                     </button>
                     <div class="d-sm-inline game-button" id="start-game">
                         <button class="btn btn-success btn-lg" type="button">Start Game</button>
@@ -58,11 +51,7 @@
                         <i class="fas fa-ellipsis-h fa-2x"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="hamburger-dropdown">
-                        <li class="dropdown-item" type="button">Game Rules</li>
-                        <li class="dropdown-item custom-control custom-switch" type="button">
-                            <input type="checkbox" class="custom-control-input dark-mode-btn" id="dark-switch-sm">
-                            <label for="dark-switch-sm" class="custom-control-label">Dark Mode</label>
-                        </li> 
+                        <li class="dropdown-item" type="button">Game Rules</li> 
                         <li class="dropdown-item reset">Reset</li>
                         <li>
                             <h6 class="dropdown-header">Themes</h6>
@@ -72,20 +61,38 @@
                                 <li type="button" class="dropdown-item themes covid"><i class="fas fa-virus-slash"></i> Covid-19 ethics</li>
                             </ul>     
                         </li>
-                        <li class="btn btn-danger custom-control custom-switch" type="button">
-                            <input type="checkbox" class="custom-control-input" id="demon-switch-sm">
-                            <label for="demon-switch-sm" class="custom-control-label">DEMON MODE</label>
+                        <li class="btn btn-dark custom-control custom-switch" type="button">
+                            <input type="checkbox" class="custom-control-input dark-mode-btn" id="dark-switch-sm">
+                            <label for="dark-switch-sm" class="custom-control-label">Dark Mode</label>
                         </li>   
                     </ul>
                 </div>               
             </div>
         </nav>
-        <!-- game area 
-            How to: Add div's in javascript with class="col" and fill with img taken from an array. Use a loop that adds 
-            specific amount of div's depending on level.
-        -->
-        <div class="row row-cols-md-5 row-cols-4 game-area">
-
+        <div class="row text-center welcome-area game-area">
+            <div class="col-12">
+                <h2>Welcome!</h2>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <p>
+                    This game is a classic memory game, created as my second milestone project for Code Institute.
+                    In these times (aka. 2021 for anyone playing this game post-pandemic) many people struggle with many new issues.
+                    While I can't stop everything that is happening at the moment, I can at least try to provide some educational and heartwarming 
+                    content in the form of this game.
+                </p>
+            </div>   
+            <div class="col-md-5 col-sm-12">
+                <p>
+                    There are 3 different themes to choose from. I urge everyone to try the covid-theme, which 
+                    contains important intructional images on how to keep yourself and others safe, as well as some tips on how to keep sane when locked 
+                    up at home. The two last themes are cats and plants, (almost) everyone's two favourite things. 
+                    Enjoy!
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <p>Take a moment to look through the instructions before playing:</p>
+                <button class="btn btn-outline-light">Game Rules</button>
+            </div>
         </div>
         <!--timer, best time, current level-->
         <div class="bottom-area row text-center align-items-center">

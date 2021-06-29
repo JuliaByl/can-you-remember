@@ -12,7 +12,7 @@ let maxLevel = 1;
 let catsMaxLevel = 1;
 let plantsMaxLevel = 1;
 let covidMaxLevel = 1;
-let theme;
+let theme = "cats";
 let nextArrow = $(".fa-arrow-alt-circle-right");
 let prevArrow = $(".fa-arrow-alt-circle-left");
 let timerStart = false;
@@ -379,7 +379,7 @@ $(".dark-mode-btn").click(function() {
 
 /*interactive styling*/
 function interactiveStyling() {
-    if ($(window).width() <= 772) {
+    if ($(window).width() <= 576) {
         $("header").append($(".hamburger-menu"));
         $("header").append($(".game-button"));
         $("header").append($(".timer"));
