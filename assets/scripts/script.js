@@ -38,7 +38,7 @@ function enableDarkMode() {
 function changeColumns() {
     switch (currentLevel) {
         case 1:
-            gameArea.attr("class", "row row-cols-md-5 row-cols-5 game-area");  
+            gameArea.attr("class", "row row-cols-md-5 row-cols-5 game-area half-width");  
             break;
         case 2:
             gameArea.attr("class", "row row-cols-md-8 row-cols-4 game-area");  
@@ -243,12 +243,12 @@ function incrementMaxLevel() {
 
 function colorArrows() {
     if (currentLevel === 1) {
-        prevArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        prevArrow.removeClass("fas").addClass("far").css("color", "");
     } else {
         prevArrow.removeClass("far").addClass("fas").css("color", "#28a745");
     }
     if (currentLevel === maxLevel) {
-        nextArrow.removeClass("fas").addClass("far").css("color", "#005B62");
+        nextArrow.removeClass("fas").addClass("far").css("color", "");
     } else {
         nextArrow.removeClass("far").addClass("fas").css("color", "#28a745");
     }
@@ -292,6 +292,28 @@ function previousLevel() {
     generateTheme();
     colorArrows();
     generateStartButton();
+}
+
+function openGameRules() {
+    $(".game-area").html(`
+        <div class="col-12" >
+            <h2>Game Rules</h2>
+        </div>
+        <div class = "col-md-6 col-sm-12">
+            <ol class="text-left"> 
+                <li>To start off the game, you will first need to pick a theme.</li>
+                <li>After a theme is chosen you can click the "Start Game" button and the game will start.</li>
+                <li>In the bottom of the game area there is a stopwatch that will start running once you start the game, and stop when you clear it.</li>
+                <li>The "Best Time" - section will update every time you beat your highscore on every level, and in each theme. How fast can you clear the cards?</li>
+                <li>When in the game, you will want to match two of the same image, and once everything is matched, you can go to the next level.</li>
+                <li>You can find arrows right under the game area, and they will light up in green if you can navigate to the next or previous level.</li>
+                <li>Each time you go to a new level you will need to click the "Start Game" - button.</li>
+                <li>Once level 4 is cleared, you can go explore a new theme, or go back to previos levels and beat you highscore!.</li>
+                <li>If you want to start over completely, just click "Reset". Please note: reset means you clear all levels across all teams!</li>
+                <li>If your eyes hurt from all the cute cats (or just the brighter screen), switch to dark mode.</li>
+            </ol>
+        </div>
+    `);
 }
 
 /*event listeners*/
@@ -370,6 +392,11 @@ $(".reset").click(function () {
     $("#level").html("1");
     bestTimeHtml.html("00:00:00");
     colorArrows();
+})
+
+$(".game-rules").click(function() {
+    gameArea.empty();
+    openGameRules();
 })
 
 /*enables/disables dark mode styling*/

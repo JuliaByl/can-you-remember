@@ -53,7 +53,7 @@ span {
     border: solid #71D9D8
 }
 
-.bottom-area, .dropdown-header, h1, .fa-ellipsis-h, .timer {
+.bottom-area, .dropdown-header, h1, .fa-ellipsis-h, .timer, footer {
     color: #005B62;
 }
 
@@ -66,7 +66,6 @@ h1 {
 /*game container*/
 .game-container {
     height: 100vh;
-    margin-bottom: 5vh;
 }
 
 .full-menu {
@@ -92,11 +91,15 @@ li > .fas {
 /*game area*/
 .game-area {
     height: fit-content;
-    min-width: 90vw;
+    width: 90vw;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     padding: 4px;
+}
+
+.half-width {
+    max-width: 50vw;
 }
 
 /*sizing memory bricks*/
@@ -139,9 +142,24 @@ h2 {
     margin-top: 30px;
 }
 
+/*game rules*/
+.text-left li {
+    margin: 8px auto;
+}
+
 /*footer*/
 footer {
     padding-top: 15px;
+    border-top: 2px solid #fff;
+    font-size: small;
+}
+
+.social p a {
+    color: #005B62;
+}
+
+.social>* {
+    float: right;
 }
 
 /* Missing bootstrap classes */
@@ -190,7 +208,11 @@ footer {
         margin: 0;
     }
 
-    .game-area, body {
+    .half-width {
+        max-width: 90vw;
+    }
+
+    .game-area, body{
         background-color: #4ED0CE;
         border-bottom: 2px solid #fff;
         padding-bottom: 14px;
@@ -271,7 +293,7 @@ footer {
     background-color: #005B62;
 }
 
-.dark-mode .game-area, .dark-mode h1, .dark-mode .fa-ellipsis-h {
+.dark-mode .game-area, .dark-mode h1, .dark-mode .fa-ellipsis-h, .dark-mode footer, .dark-mode .social p a {
     color: hsl(184, 80%, 79%); 
 }
 
